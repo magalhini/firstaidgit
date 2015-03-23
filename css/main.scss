@@ -1,0 +1,140 @@
+@import 'vars';
+@import 'reset';
+
+.main-container {
+    margin: 1em auto;
+}
+
+.banner {
+    text-align: center;
+}
+
+.main-navigation {
+    .main-navigation--item {
+        display: inline-block;
+        margin-right: 1em;
+    }
+}
+
+.container--wrapper {
+    margin: auto;
+
+    @media all and (min-width: 20em) {
+        max-width: 20em;
+    }
+
+    @media all and (min-width: 40em) {
+        max-width: 38em;
+    }
+
+    @media all and (min-width: 60em) {
+        max-width: 56em;
+    }
+}
+
+// Filterable Component
+
+.c-query {
+    background: transparent;
+    border: none;
+    border-bottom: 5px solid rgba(0,0,0,.2);
+    font-size: 2em;
+    width: 100%;
+    outline: none;
+    margin: 2em 0 1em 0;
+    padding: 0 0 .5em 0;
+    transition: border .2s ease-in-out;
+
+    &:focus {
+        border-bottom: 10px solid rgba(255,255,255, .5);
+    }
+}
+
+.c-filterableList code {
+    padding: 0 .5em;
+    color: $codeColor;
+
+    @media all and (min-width: 40em) {
+        font-size: 1.3em;
+    }
+}
+
+.c-filterableList .c-filterableList__number {
+    margin-bottom: 2em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.title--bigass {
+    font-size: 2em;
+}
+
+// Filterable Component Items
+
+.item {
+	animation-name: active;
+	animation-duration: .2s;
+	animation-timing-function: ease-in-out;
+
+    border-bottom: 1px dashed $secondaryColor;
+}
+
+.item__title {
+    color: $subtitleColor;
+    cursor: pointer;
+    font-weight: 600;
+    margin-bottom: 1em;
+    transition: all .1s ease-in-out;
+
+    @media all and (min-width: 60em) { font-size: 1.3em; }
+
+    &.is-open + .item__instructions {
+        max-height: 20em;
+        top: -1em;
+        opacity: 1;
+    }
+
+    &:hover,
+    &.is-open {
+        padding-left: 1em;
+        color: $selectedColor;
+    }
+
+    &.is-open {
+        border-left: 2px solid;
+    }
+}
+
+.item__instructions {
+    max-height: 1px;
+    opacity: 0;
+    top: 0;
+    left: 1em;
+    position: relative;
+    overflow: hidden;
+    transition: all .3s ease-in-out 0s;
+
+    @media all and (min-width: 40em) {
+        font-size: 1.2em;
+    }
+}
+
+// Animations
+
+.example-enter {
+    opacity: 0.01;
+    transition: all .5s ease-in-out;
+}
+
+.example-enter.example-enter-active {
+    opacity: 1;
+}
+
+.example-leave {
+    opacity: 1;
+    transition: all .2s ease-in-out;
+}
+
+.example-leave.example-leave-active {
+    opacity: 0.01;
+}

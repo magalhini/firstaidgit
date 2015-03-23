@@ -1,0 +1,30 @@
+[{
+        "title": "Merge my local changes with another branch",
+        "content": "This can be done while a regular `merge`, and you should *keep your merge history* by making sure you use `--no-ff`, which means _no fast forward_.",
+        "help": "undo commit after push reset"
+},
+{
+        "title": "Undo commit before pushing changes",
+        "content": "Content for this thing two",
+        "help": "undo commit before push reset"
+},
+{
+        "title": "Squash commits before pushing",
+        "content": "Squash _(n)_ commits before you push changes",
+        "help": "squash commits number before push"
+},
+{
+        "title": "Revert file to a specific version",
+        "content": "Content for post two",
+        "help": "revert reset file specific version"
+},
+{
+        "title": "Undo a commit message before pushing",
+        "content": "You can amend your commit message by typing `git commit --amend`, which will open your editor and allow you to make changes to the most recent commit message.",
+        "help": "undo commit message before pushing amend"
+},
+{
+        "title": "Undo a commit message after pushing",
+        "content": "This is a two-step process. You will need to amend your commit message by using `git commit --amend`, and then you need to re-write your branch commit history by force pushing the commit: `git push <remote> <branch> --force` **Warning:** by force pushing, you can lose the remote branch commits if your local branch is not up to date, so be careful.",
+        "help": "undo commit message after pushing amend"
+}]

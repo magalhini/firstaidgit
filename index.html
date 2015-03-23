@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>New React App</title>
+
+    <script src="bower_components/showdown/src/showdown.js"></script>
+
+    {% if (o.webpack.assetsByChunkName.app[1]) { %}
+        <link rel="stylesheet" href="{%=o.htmlWebpackPlugin.options.publicPath%}{%=o.webpack.assetsByChunkName.app[1]%}">
+    {% } %}
+    </head>
+
+    <body>
+        <section id="app" class="main-container">
+
+        </section>
+        {% if (o.htmlWebpackPlugin.options.webpackDevServer) { %}
+        <!-- Inject webpack-dev-server script if necessary -->
+        <script src="{%=o.htmlWebpackPlugin.options.webpackDevServer%}"></script>
+        {% } %}
+
+        {% for (var chunk in o.htmlWebpackPlugin.assets) { %}
+        <script src="{%=o.htmlWebpackPlugin.assets[chunk]%}"></script>
+        {% } %}
+  </body>
+</html>

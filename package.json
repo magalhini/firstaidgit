@@ -1,0 +1,37 @@
+{
+  "name": "webpack-another",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "scripts": {
+    "start": "webpack-dev-server --hot --progress --colors",
+    "build": "webpack --progress --config webpack.dist.config --colors"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel": "^4.7.12",
+    "es6-promise": "^2.0.1",
+    "extract-text-webpack-plugin": "^0.3.8",
+    "json-loader": "^0.5.1",
+    "jsx-loader": "^0.12.2",
+    "markdown": "^0.5.0",
+    "react": "^0.12.2",
+    "react-hot-loader": "^1.1.6",
+    "react-router": "^0.12.4",
+    "sass-loader": "^0.4.1",
+    "showdown": "^0.4.0",
+    "style-loader": "^0.8.3",
+    "webpack": "^1.5.3",
+    "webpack-dev-server": "^1.7.0",
+    "whatwg-fetch": "^0.7.0"
+  },
+  "devDependencies": {
+    "autoprefixer-loader": "^1.1.0",
+    "babel-core": "^4.7.16",
+    "css-loader": "^0.9.1",
+    "exports-loader": "^0.6.2",
+    "html-webpack-plugin": "^1.1.0",
+    "imports-loader": "^0.6.3"
+  }
+}
