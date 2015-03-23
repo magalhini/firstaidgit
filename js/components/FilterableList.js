@@ -17,6 +17,14 @@ let FilterableList = React.createClass({
         };
     },
 
+    componentDidMount() {
+
+    },
+
+    blah() {
+        React.findDOMNode(this.refs.cInput).focus();
+    },
+
     getInitialState() {
         return { query: '' }
     },
@@ -107,8 +115,9 @@ let FilterableList = React.createClass({
 
         return (
             <div className="c-filterableList">
-                <input className={this.classes.input} type="text" autofocus
+                <input className={this.classes.input} type="text" ref="cInput"
                     placeholder = {this.props.placeholder}
+                    onClick = {this.blah}
                     value = {this.state.query} onChange = {this.handleChange}/>
                     {answerCount}
                 <ul className="items"> {items} </ul>

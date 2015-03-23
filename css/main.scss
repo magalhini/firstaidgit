@@ -37,16 +37,20 @@
 .c-query {
     background: transparent;
     border: none;
-    border-bottom: 5px solid rgba(0,0,0,.2);
-    font-size: 2em;
+    border-bottom: 2px solid rgba(0,0,0, .2);
+    color: $selectedColor;
+    font-size: 2.5em;
     width: 100%;
     outline: none;
-    margin: 2em 0 1em 0;
-    padding: 0 0 .5em 0;
-    transition: border .2s ease-in-out;
+    margin: 1em 0 1em 0;
+    padding: .7em .7em .7em 0;
+    transition: all .2s ease-in-out;
+
+    &::-webkit-input-placeholder { color: rgba(255, 255, 255, .6); }
 
     &:focus {
-        border-bottom: 10px solid rgba(255,255,255, .5);
+        padding-left: .7em;
+        border: 2px solid rgba(255,255,255, .5);
     }
 }
 
@@ -63,6 +67,8 @@
     margin-bottom: 2em;
     text-transform: uppercase;
     letter-spacing: 1px;
+    text-align: center;
+    color: rgba(255,255,255, .7);
 }
 
 .title--bigass {
