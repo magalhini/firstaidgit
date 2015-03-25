@@ -1,6 +1,17 @@
 import React from 'react';
 import FilterableList from './FilterableList.js';
 
+let Sidebar = React.createClass({
+    render() {
+        return (
+            <div className="column-4">
+                <h2>First Aid Git</h2>
+                <p>Lorem ipsum</p>
+            </div>
+        );
+    }
+});
+
 let Home = React.createClass({
 
     getInitialState() {
@@ -18,15 +29,15 @@ let Home = React.createClass({
                     self.setState({ data: json });
                 });
         }
-        // do ajax quey here if (this.isMounted()) {
     },
 
     render() {
         return (
-            <section className="main-content">
+            <section className="main-content wrapper">
                 <FilterableList
                     data = { this.state.data }
                     autofocus = "true"
+                    sidebar = {Sidebar}
                     placeholder = "What do you need help with?"
                     />
             </section>

@@ -17,12 +17,10 @@ let FilterableList = React.createClass({
         };
     },
 
-    componentDidMount() {
-
-    },
+    componentDidMount() {},
 
     blah() {
-        React.findDOMNode(this.refs.cInput).focus();
+        //React.findDOMNode(this.refs.cInput).focus();
     },
 
     getInitialState() {
@@ -114,13 +112,18 @@ let FilterableList = React.createClass({
         answerCount = this.renderCount(items.length);
 
         return (
-            <div className="c-filterableList">
+            <div className="c-filterableList row">
                 <input className={this.classes.input} type="text" ref="cInput"
                     placeholder = {this.props.placeholder}
                     onClick = {this.blah}
                     value = {this.state.query} onChange = {this.handleChange}/>
+                <div className="column-8">
                     {answerCount}
-                <ul className="items"> {items} </ul>
+                    <ul className="items">{items}</ul>
+                </div>
+                <div>
+                    <this.props.sidebar/>
+                </div>
             </div>
         );
     }
