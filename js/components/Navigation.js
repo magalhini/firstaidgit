@@ -4,8 +4,8 @@ import { DefaultRoute, Link, Route, RouteHandler } from 'react-router';
 let Navigation = React.createClass({
     render() {
         return (
-            <section>
-                <ul className="main-navigation">
+            <section className="row">
+                <ul className="main-navigation column-12">
                     <li className="main-navigation--item">
                         <Link to="home">Home</Link>
                     </li>

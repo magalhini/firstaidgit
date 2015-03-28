@@ -66,6 +66,8 @@ let FilterableList = React.createClass({
                     </h3>
                     <div className={self.classes.itemInstructions}>
                         <div dangerouslySetInnerHTML={{__html: parsed}}></div>
+                        <span>Search again</span>
+                        <span>Close</span>
                     </div>
                 </li>
                 </ReactTransitionGroup>
@@ -113,11 +115,13 @@ let FilterableList = React.createClass({
 
         return (
             <div className="c-filterableList row">
+                <div className="column-12">
                 <input className={this.classes.input} type="text" ref="cInput"
                     placeholder = {this.props.placeholder}
                     onClick = {this.blah}
                     value = {this.state.query} onChange = {this.handleChange}/>
-                <div className="column-8">
+                </div>
+                <div className="column-9">
                     {answerCount}
                     <ul className="items">{items}</ul>
                 </div>

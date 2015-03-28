@@ -25,6 +25,31 @@
 },
 {
         "title": "Undo a commit message after pushing",
-        "content": "This is a two-step process. You will need to amend your commit message by using `git commit --amend`, and then you need to re-write your branch commit history by force pushing the commit: `git push <remote> <branch> --force` **Warning:** by force pushing, you can lose the remote branch commits if your local branch is not up to date, so be careful.",
+        "content": "This is a two-step process. You will need to amend your commit message by using `git commit --amend`, and then you need to re-write your branch commit history by force pushing the commit: `git push <remote> <branch> --force` \n\n **Warning:** by force pushing, you can lose the remote branch commits if your local branch is not up to date, so be careful.",
         "help": "undo commit message after pushing amend"
+},
+{
+        "title": "Combine two or more commits",
+        "content": "You will need to use an interactive rebase. If you're rebasing against master, you star the process by typing `git rebase -i master`. However, if you're not rebasing against a branch, you'll need to rebase against your `HEAD`.\n\n If you want to squash your last 2 commits, you can use `git rebase -i HEAD~2`.\n\n You will then be prompted to follow instructions to pick commits. If you wish to combine all your commits with the oldest *first* commit, leave the first line with `pick` and change the letter to `f` on all other commits. ",
+        "help": "combine commits join rebase"
+},
+{
+        "title": "Remove a file from git but keep the local file",
+        "content": "This will remove the file your your git tracking, but keep your local copy:\n\n `git rm --cached myfile.txt`",
+        "help": "remove file from git delete"
+},
+{
+        "title": "Squash feature branch commits to merge into the release branch",
+        "content": "If you decide to merge and squash your commits, this will create a new commit but only in the release branch, therefore the history of the feature branch will remain intact. \n\n Here's an example of how to achieve this: \n\n `git fetch origin` \n\n `git checkout [release-branch]` \n\n `git rebase origin/[release-branch]` \n\n `git merge —squash —no-commit [feature-branch]` \n\n `git commit -m 'Merge X into Y'` \n\n You'll end up with one commit only in your release branch, while keeping the feature history intact.",
+        "help": "squash combine commits feature merge to release branch"
+},
+{
+        "title": "Rename my local and remote branch",
+        "content": "Let’s say you have a “fix-bug25” branch, and you want to rename it to “hotfix-users”. First, change the local branch: \n\n `git branch -m fix-bug25 hotfix-users` \n\n Now the changes to the remote branch. You can’t rename the branch directly, so you’ll need to delete it and push it again with the new name. Make sure no one else within your team is working on it, first! Delete the branch: `git push origin :fix-bug25` \n\n And now let's push the new one: `git push origin hotfix-users`",
+        "help": "rename wrong name branch"
+},
+{
+        "title": "Commited to the wrong branch",
+        "content": "Start by switching to the new branch you forgot to create, by typing `git checkout -b <new-branch>`. Switch back to the original branch now `git checkout <original-branch>` and now reset to the last commit you want to keep. \n\n To do so, you can type `git log` and save the hash of the last commit that you want to keep. Let's say this is `a31a45c`. \n\n Now you have to reset it: `git reset --hard a31a45c` and push this last forced reset. \n\n **Warning:** Make sure no one has commited to that original branch in the meantime, or changes might be lost!",
+        "help": "commit wrong branch master accident"
 }]

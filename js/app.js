@@ -13,7 +13,7 @@ require('./../css/main.scss');
 let App = React.createClass({
     render() {
         return (
-            <div className="container--wrapper">
+            <div className="container--wrapper wrapper">
                 <div className="banner">
                     <h1 className="title--bigass">First Aid Git</h1>
                 </div>

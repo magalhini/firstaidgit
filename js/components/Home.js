@@ -1,16 +1,6 @@
 import React from 'react';
-import FilterableList from './FilterableList.js';
-
-let Sidebar = React.createClass({
-    render() {
-        return (
-            <div className="column-4">
-                <h2>First Aid Git</h2>
-                <p>Lorem ipsum</p>
-            </div>
-        );
-    }
-});
+import FilterableList from './FilterableList';
+import Sidebar from './Sidebar';
 
 let Home = React.createClass({
 
@@ -33,7 +23,7 @@ let Home = React.createClass({
 
     render() {
         return (
-            <section className="main-content wrapper">
+            <section className="main-content">
                 <FilterableList
                     data = { this.state.data }
                     autofocus = "true"

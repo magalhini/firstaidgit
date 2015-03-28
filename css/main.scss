@@ -85,7 +85,7 @@
     @media all and (min-width: 60em) { font-size: 1.3em; }
 
     &.is-open + .item__instructions {
-        max-height: 20em;
+        max-height: 40em;
         top: -1em;
         opacity: 1;
     }

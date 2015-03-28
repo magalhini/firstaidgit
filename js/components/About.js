@@ -3,7 +3,9 @@ import React from 'react';
 let About = React.createClass({
     render() {
         return (
-            <h2>I am the about page</h2>
+            <section className="main-content section-about wrapper">
+                <h2>What is this all about</h2>
+            </section>
         );
     }
 });
