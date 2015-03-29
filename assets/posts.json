@@ -1,4 +1,4 @@
-[{
+    [{
         "title": "Merge my local changes with another branch",
         "content": "This can be done while a regular `merge`, and you should *keep your merge history* by making sure you use `--no-ff`, which means _no fast forward_.",
         "help": "undo commit after push reset"
@@ -44,8 +44,13 @@
         "help": "squash combine commits feature merge to release branch"
 },
 {
+        "title": "Reset to a certain commit in history",
+        "content": "If you don't care about your local changes, you can reset back to one commit back in time by doing a hard reset: \n\n `git reset --hard HEAD~1` \n\n This will set the HEAD back by one commit. You can also do this using the commit hash instead",
+        "help": "revert reset commit certain history"
+},
+{
         "title": "Rename my local and remote branch",
-        "content": "Let’s say you have a “fix-bug25” branch, and you want to rename it to “hotfix-users”. First, change the local branch: \n\n `git branch -m fix-bug25 hotfix-users` \n\n Now the changes to the remote branch. You can’t rename the branch directly, so you’ll need to delete it and push it again with the new name. Make sure no one else within your team is working on it, first! Delete the branch: `git push origin :fix-bug25` \n\n And now let's push the new one: `git push origin hotfix-users`",
+        "content": "Let’s say you have a _“fix-bug25”_ branch, and you want to rename it to _“hotfix-users”_. First, change the local branch: \n\n `git branch -m fix-bug25 hotfix-users` \n\n Now, the remote branch: you can’t rename the branch directly, so you’ll need to delete it and push it again with the new name. Make sure no one else within your team is working on it! Delete the branch: `git push origin :fix-bug25` \n\n And now let's push the new one: `git push origin hotfix-users`",
         "help": "rename wrong name branch"
 },
 {

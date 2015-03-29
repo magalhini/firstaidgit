@@ -10,6 +10,10 @@
     text-align: center;
 }
 
+.selected {
+    color: red;
+}
+
 .main-navigation {
     .main-navigation--item {
         display: inline-block;
@@ -112,6 +116,18 @@
 
     @media all and (min-width: 40em) {
         font-size: 1.2em;
+    }
+}
+
+// Sidebar
+
+.sidebar--title {
+    color: $selectedColor;
+    font-size: 1em;
+    text-transform: uppercase;
+
+    + p {
+        margin-bottom: 2.5em;
     }
 }
 

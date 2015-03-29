@@ -6,6 +6,33 @@ var md = markdown.markdown;
 
 let ReactTransitionGroup = React.addons.CSSTransitionGroup;
 
+let FilterableListItem = React.createClass({
+    getInitialState() {
+        return {active: false}
+    },
+
+    toggle() {
+        this.setState({active: !this.state.active})
+    },
+
+    render() {
+        return (
+            <ReactTransitionGroup transitionName="example" transitionAppear={true}>
+                <li key={this.props.name} className="item">
+                    <h3 onClick={this.toggle} className={this.state.active ? 'item__title is-open' : 'item__title'}>
+                        {this.props.name}
+                    </h3>
+                    <div className="item__instructions">
+                        <div dangerouslySetInnerHTML={{__html: this.props.instructions}}></div>
+                        <span>Search again</span>
+                        <span onClick={this.toggle}>Close</span>
+                    </div>
+                </li>
+            </ReactTransitionGroup>
+        );
+    }
+})
+
 let FilterableList = React.createClass({
 
     componentWillMount() {
@@ -17,12 +44,6 @@ let FilterableList = React.createClass({
         };
     },
 
-    componentDidMount() {},
-
-    blah() {
-        //React.findDOMNode(this.refs.cInput).focus();
-    },
-
     getInitialState() {
         return { query: '' }
     },
@@ -30,28 +51,6 @@ let FilterableList = React.createClass({
     handleChange(e) {
         this.setState({ query: e.target.value });
     },
-    /*
-    findMatch(haystack, needle) {
-        var regex,
-            matcher;
-
-        if (needle.length === 1) {
-            needle = [needle];
-            regex = needle.pop();
-        } else {
-            needle = needle.split(' ');
-            regex = '(?:.*(?:\\b(?:' + needle.join('|') + ')\\b)){2}';
-        }
-
-        matcher = new RegExp(regex);
-        var matches = [];
-
-        haystack.forEach(function(hay) {
-            matches = [hay.help].filter(function (hay) {
-                return matcher.test(hay);
-            });
-        });
-    },*/
 
     updateList(items) {
         var self = this;
@@ -59,18 +58,22 @@ let FilterableList = React.createClass({
         return items.map(function(i) {
             var parsed = md.toHTML(i.content);
             return (
+
+                <FilterableListItem name={i.title} instructions={parsed}/>
+                /*
                 <ReactTransitionGroup transitionName="example" transitionAppear={true}>
-                <li key={i.title} className={self.classes.itemClass}>
+                <li key={i.title} onClick={self.toggleCollapse} className={self.classes.itemClass}>
+
                     <h3 className={self.classes.itemTitle} onClick={self.onItemClick}>
                         {i.title}
                     </h3>
                     <div className={self.classes.itemInstructions}>
                         <div dangerouslySetInnerHTML={{__html: parsed}}></div>
                         <span>Search again</span>
-                        <span>Close</span>
+                        <span onClick={self.onClose}>Close</span>
                     </div>
                 </li>
-                </ReactTransitionGroup>
+                </ReactTransitionGroup>*/
             );
         });
     },
@@ -84,13 +87,10 @@ let FilterableList = React.createClass({
 
     renderCount(count) {
         if (!count) return null;
+
         return (<p className="c-filterableList__number">
             <b>Answers</b> ({count})
         </p>);
-    },
-
-    onItemClick(e) {
-        e.currentTarget.classList.toggle('is-open');
     },
 
     render() {
