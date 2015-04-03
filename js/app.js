@@ -3,7 +3,6 @@ import Router from 'react-router';
 import { DefaultRoute, Link, Route, RouteHandler } from 'react-router';
 
 import Home from './components/Home.js';
-import Admin from './components/Admin.js';
 import About from './components/About.js';
 
 import Navigation from './components/Navigation.js';
@@ -19,6 +18,7 @@ let App = React.createClass({
                 </div>
 
                 <Navigation/>
+                    <RouteHandler/>
             </div>
         );
     }
@@ -28,7 +28,6 @@ let routes = (
     <Route name="app" path="/" handler={App}>
       <Route name="home" path="/" handler={Home}/>
       <Route name="about" path="/about" handler={About}/>
-      <Route name="admin" path="/admin" handler={Admin}/>
     </Route>
 );
 

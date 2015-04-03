@@ -12,12 +12,9 @@ let Navigation = React.createClass({
                     <li className="main-navigation--item">
                         <Link to="about">About</Link>
                     </li>
-                    <li className="main-navigation--item">
-                        <Link to="admin">Login</Link>
-                    </li>
                 </ul>
 
-                <RouteHandler/>
+                
             </section>
         );
     }

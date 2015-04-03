@@ -26,6 +26,35 @@
 }
 
 // Filterable Component
+//
+.c-filterableList--search {
+    transform: scale(1);
+    transform-origin: 100% 100%;
+    transition: all .2s ease-in-out;
+
+    .c-query {
+        font-size: 1.5em;
+        margin: 0;
+    }
+
+    &.fixed {
+        box-shadow: 0 0 0 2px rgba(0,0,0,.2);
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: #468872;
+        z-index: 2;
+        animation-name: topBar;
+        animation-duration: .3s;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards;
+    }
+}
+
+@keyframes topBar {
+    0% {top: 0px; transform: scale(.5); transform-origin: 40% 40%;}
+    100% {top: 0; transform: scale(1); transform-origin: 40% 40%;}
+}
 
 .c-query {
     background: transparent;
@@ -36,7 +65,6 @@
     outline: none;
     margin: 1em 0 1em 0;
     padding: .7em;
-    transition: all .2s ease-in-out;
 
     &::-webkit-input-placeholder { color: rgba(255, 255, 255, .6); }
 

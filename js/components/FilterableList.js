@@ -4,15 +4,23 @@ import markdown from 'markdown';
 
 var md = markdown.markdown;
 
+var sortByKey = function(obj) {
+    Array.prototype.forEach.call(Object.keys(obj).sort(), function(i) {
+      obj[i] = obj[i];
+    });
+};
+
 let ReactTransitionGroup = React.addons.CSSTransitionGroup;
 
 let FilterableListItem = React.createClass({
     getInitialState() {
-        return {active: false}
+        return {
+            active: false
+        };
     },
 
     toggle() {
-        this.setState({active: !this.state.active})
+        this.setState({active: !this.state.active});
     },
 
     render() {
@@ -24,7 +32,7 @@ let FilterableListItem = React.createClass({
                     </h3>
                     <div className="item__instructions">
                         <div dangerouslySetInnerHTML={{__html: this.props.instructions}}></div>
-                        <span>Search again</span>
+                        <span onClick={this.resetQuery}>Search again</span>
                         <span onClick={this.toggle}>Close</span>
                     </div>
                 </li>
@@ -45,51 +53,58 @@ let FilterableList = React.createClass({
     },
 
     getInitialState() {
-        return { query: '' }
+        return { query: '', fixed: false }
+    },
+
+    componentDidMount() {
+        window.document.addEventListener('scroll', this.toggleFixed);
+    },
+
+    toggleFixed() {
+        var height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+        var dToTop = (window.pageYOffset || document.scrollTop)  - (document.clientTop || 0);
+        //var el = React.findDOMNode(this.refs.mainEl);
+        var input = this.getDOMNode(this.refs.cInput);
+
+        if (dToTop > input.offsetTop) {
+            this.state.fixed = true;
+            input.children[0].classList.add('fixed');
+        } else {
+            input.children[0].classList.remove('fixed');
+        }
     },
 
     handleChange(e) {
         this.setState({ query: e.target.value });
     },
 
-    updateList(items) {
+    updateList(items, input) {
         var self = this;
 
         return items.map(function(i) {
             var parsed = md.toHTML(i.content);
             return (
-
-                <FilterableListItem name={i.title} instructions={parsed}/>
-                /*
-                <ReactTransitionGroup transitionName="example" transitionAppear={true}>
-                <li key={i.title} onClick={self.toggleCollapse} className={self.classes.itemClass}>
-
-                    <h3 className={self.classes.itemTitle} onClick={self.onItemClick}>
-                        {i.title}
-                    </h3>
-                    <div className={self.classes.itemInstructions}>
-                        <div dangerouslySetInnerHTML={{__html: parsed}}></div>
-                        <span>Search again</span>
-                        <span onClick={self.onClose}>Close</span>
-                    </div>
-                </li>
-                </ReactTransitionGroup>*/
+                <FilterableListItem name={i.title} instructions={parsed} classes={self.classes}/>
             );
         });
     },
 
     renderNoItems() {
-        return (<li className="item-active">
-            <h3>No results for "{this.state.query}"</h3>
-            <p><a href="#">Submit a help item?</a></p>
+        return (
+            <li className="item">
+                <h3>No results for "{this.state.query}"</h3>
+                <p><a href="#">Submit a help item?</a></p>
             </li>);
     },
 
-    renderCount(count) {
+    renderCount(count, length) {
+        var word = 'Results';
+
         if (!count) return null;
+        if (count === length) word = 'All topics';
 
         return (<p className="c-filterableList__number">
-            <b>Answers</b> ({count})
+            <b>{word}</b> ({count})
         </p>);
     },
 
@@ -98,11 +113,13 @@ let FilterableList = React.createClass({
             answerCount = "",
             flatQuery = this.state.query.trim().toLowerCase();
 
+        // Begin fuzzy search
         if (flatQuery.length) {
             let f = new Fuse(this.props.data, { keys: ['help', 'title'], threshold: 0.2 });
             items = f.search(flatQuery);
         }
 
+        // Get a list of items that match the query
         items = this.updateList(items);
 
         if (!items.length && flatQuery) {
@@ -111,15 +128,15 @@ let FilterableList = React.createClass({
             items = (<li>Loading content...</li>);
         }
 
-        answerCount = this.renderCount(items.length);
+        // Title of list, depending on the state of the search
+        answerCount = this.renderCount(items.length, this.props.data.length);
 
         return (
             <div className="c-filterableList row">
-                <div className="column-12">
-                <input className={this.classes.input} type="text" ref="cInput"
-                    placeholder = {this.props.placeholder}
-                    onClick = {this.blah}
-                    value = {this.state.query} onChange = {this.handleChange}/>
+                <div ref="mainEl" className="column-12 c-filterableList--search">
+                    <input className={this.classes.input} type="text" ref="cInput"
+                        placeholder = {this.props.placeholder}
+                        value = {this.state.query} onChange = {this.handleChange}/>
                 </div>
                 <div className="column-9">
                     {answerCount}

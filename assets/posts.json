@@ -1,21 +1,16 @@
     [{
         "title": "Merge my local changes with another branch",
-        "content": "This can be done while a regular `merge`, and you should *keep your merge history* by making sure you use `--no-ff`, which means _no fast forward_.",
+        "content": "This can be done while a regular `merge`, and you should *keep your merge history* by making sure to use `--no-ff`, which means _no fast forward_. \n\n Switch to the branch you're merging against, make sure it's up to date, and merge: \n\n `git merge <the-other-branch> --no-ff`",
         "help": "undo commit after push reset"
 },
 {
         "title": "Undo commit before pushing changes",
-        "content": "Content for this thing two",
+        "content": "If you made a commit that you wish to modify before pushing",
         "help": "undo commit before push reset"
 },
 {
-        "title": "Squash commits before pushing",
-        "content": "Squash _(n)_ commits before you push changes",
-        "help": "squash commits number before push"
-},
-{
-        "title": "Revert file to a specific version",
-        "content": "Content for post two",
+        "title": "Discard local file changes",
+        "content": "The easiest way to get rid of unwanted changes is by resetting a file or a folder to the current commit state. To do so, \n\n `git checkout myFile.txt` \n\n You can also reset a specific path: \n\n `git checkout -- myPath`",
         "help": "revert reset file specific version"
 },
 {
@@ -52,6 +47,11 @@
         "title": "Rename my local and remote branch",
         "content": "Let’s say you have a _“fix-bug25”_ branch, and you want to rename it to _“hotfix-users”_. First, change the local branch: \n\n `git branch -m fix-bug25 hotfix-users` \n\n Now, the remote branch: you can’t rename the branch directly, so you’ll need to delete it and push it again with the new name. Make sure no one else within your team is working on it! Delete the branch: `git push origin :fix-bug25` \n\n And now let's push the new one: `git push origin hotfix-users`",
         "help": "rename wrong name branch"
+},
+{
+        "title": "Revert a commit that was pushed",
+        "content": "This will revert one or more commits that you want to erase from the remote branch. You can either specify one by hash: \n\n `git revert b712c3c` \n\n Revert only the second to last commit: \n\n `git revert HEAD^` Or simply undo the last commit: \n\n `git revert -n HEAD`",
+        "help": "revert commit pushed after push"
 },
 {
         "title": "Commited to the wrong branch",
