@@ -3,6 +3,7 @@ $grid-max-width: 60em;
 
 $breakpoint-small: "only screen and (min-width: 20em)";
 $breakpoint-medium: "only screen and (min-width: 40em)";
+$breakpoint-large: "only screen and (min-width: 60em)";
 
 [class*='column-'] {
   float: left;
@@ -17,7 +18,7 @@ $breakpoint-medium: "only screen and (min-width: 40em)";
     content: '';
     display: table;
   }
-  
+
   &:after {
     clear: both;
   }

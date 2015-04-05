@@ -32,8 +32,8 @@ let FilterableListItem = React.createClass({
                     </h3>
                     <div className="item__instructions">
                         <div dangerouslySetInnerHTML={{__html: this.props.instructions}}></div>
-                        <span onClick={this.resetQuery}>Search again</span>
-                        <span onClick={this.toggle}>Close</span>
+                        <button className="button item__button" onClick={this.resetQuery}>Search again</button>
+                        <button className="button item__button" onClick={this.toggle}>Close</button>
                     </div>
                 </li>
             </ReactTransitionGroup>

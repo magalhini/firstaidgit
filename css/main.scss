@@ -1,6 +1,25 @@
 @import 'vars';
 @import 'reset';
 @import 'grid';
+@import 'animations';
+@import 'mixins';
+
+.button {
+    background: none;
+    color: #fff;
+    font-family: $typeStack;
+    font-size: .8em;
+    cursor: pointer;
+    font-weight: 600;
+    text-transform: uppercase;
+    border: 1px solid rgba(255,255,255, .8);
+    padding: 1em 1.5em;
+
+    &:hover,
+    &:focus {
+        background: rgba(255,255,255, .2);
+    }
+}
 
 .main-container {
     margin: 1em auto;
@@ -10,8 +29,20 @@
     text-align: center;
 }
 
-.selected {
-    color: red;
+.banner__image {
+    background: url("../assets/img/logo@1x.png") no-repeat;
+    width: 374px;
+    height: 129px;
+    font-size: 0/0;
+    text-indent: -9999px;
+    margin: 2em auto 1em;
+
+    @include retina("../assets/img/logo@2x.png", 748px, 258px);
+}
+
+.banner__subtitle {
+    color: $secondaryColor;
+    font-size: 1.5em;
 }
 
 .main-navigation {
@@ -26,16 +57,10 @@
 }
 
 // Filterable Component
-//
 .c-filterableList--search {
     transform: scale(1);
     transform-origin: 100% 100%;
-    transition: all .2s ease-in-out;
-
-    .c-query {
-        font-size: 1.5em;
-        margin: 0;
-    }
+    transition: transform .2s ease-in-out;
 
     &.fixed {
         box-shadow: 0 0 0 2px rgba(0,0,0,.2);
@@ -43,33 +68,37 @@
         top: 0;
         left: 0;
         background: #468872;
-        z-index: 2;
         animation-name: topBar;
-        animation-duration: .3s;
-        animation-timing-function: ease-in-out;
+        animation-duration: .1s;
         animation-fill-mode: forwards;
+        animation-timing-function: ease-in-out;
+        z-index: 2;
+
+        .c-query {
+            font-size: 1.5em;
+            margin: 0;
+        }
     }
-}
 
-@keyframes topBar {
-    0% {top: 0px; transform: scale(.5); transform-origin: 40% 40%;}
-    100% {top: 0; transform: scale(1); transform-origin: 40% 40%;}
-}
+    .c-query {
+        background: transparent;
+        border: 2px solid rgba(255,255,255, .3);
+        color: $selectedColor;
+        font-size: 2.5em;
+        width: 100%;
+        outline: none;
+        margin: 1em 0 1em 0;
+        padding: .7em;
 
-.c-query {
-    background: transparent;
-    border: 2px solid rgba(255,255,255, .3);
-    color: $selectedColor;
-    font-size: 2.5em;
-    width: 100%;
-    outline: none;
-    margin: 1em 0 1em 0;
-    padding: .7em;
+        @media #{$breakpoint-large} {
+            font-size: 2.5em;
+        }
 
-    &::-webkit-input-placeholder { color: rgba(255, 255, 255, .6); }
+        &::-webkit-input-placeholder { color: rgba(255, 255, 255, .6); }
 
-    &:focus {
-        border: 2px solid rgba(255,255,255, .6);
+        &:focus {
+            border: 2px solid rgba(255,255,255, .6);
+        }
     }
 }
 
@@ -89,16 +118,7 @@
     color: rgba(255,255,255, .7);
 }
 
-.title--bigass {
-    font-size: 2em;
-}
-
 // Filterable Component Items
-
-.items {
-
-}
-
 .item {
 	animation-name: active;
 	animation-duration: .2s;
@@ -114,7 +134,9 @@
     margin-bottom: 1em;
     transition: all .1s ease-in-out;
 
-    @media all and (min-width: 60em) { font-size: 1.3em; }
+    @media #{$breakpoint-large} {
+        font-size: 1.3em;
+    }
 
     &.is-open + .item__instructions {
         max-height: 40em;
@@ -147,6 +169,10 @@
     }
 }
 
+.item__button {
+    margin: 0 1em 1em 0;
+}
+
 // Sidebar
 
 .sidebar--title {
@@ -159,22 +185,6 @@
     }
 }
 
-// Animations
-
-.example-enter {
-    opacity: 0.01;
-    transition: all .5s ease-in-out;
-}
-
-.example-enter.example-enter-active {
-    opacity: 1;
-}
-
-.example-leave {
-    opacity: 1;
-    transition: all .2s ease-in-out;
-}
-
-.example-leave.example-leave-active {
-    opacity: 0.01;
+.footer {
+    background: rgba(0,0,0, .8);
 }

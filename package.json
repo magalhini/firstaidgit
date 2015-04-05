@@ -31,6 +31,7 @@
     "babel-core": "^4.7.16",
     "css-loader": "^0.9.1",
     "exports-loader": "^0.6.2",
+    "file-loader": "^0.8.1",
     "html-webpack-plugin": "^1.1.0",
     "imports-loader": "^0.6.3"
   }
