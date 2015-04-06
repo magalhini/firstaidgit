@@ -52,43 +52,48 @@
     }
 }
 
-.container--wrapper {
-    margin: auto;
+.c-filterableList {
+    position: relative;
+
+    .c-filterableList--wrapper {
+        margin-top: 7em;
+
+        @media #{$breakpoint-large} {
+            margin-top: 13em;
+        }
+    }
+
+    &.fixed {
+        .c-filterableList--search {
+            background: $bodyColor;
+            position: fixed;
+            top: 0;
+            z-index: 2;
+
+            .c-query {
+                background: $bodyColor;
+                font-size: 1.5em;
+                margin: 0;
+            }
+        }
+    }
 }
 
 // Filterable Component
 .c-filterableList--search {
-    transform: scale(1);
-    transform-origin: 100% 100%;
-    transition: transform .2s ease-in-out;
-
-    &.fixed {
-        box-shadow: 0 0 0 2px rgba(0,0,0,.2);
-        position: fixed;
-        top: 0;
-        left: 0;
-        background: #468872;
-        animation-name: topBar;
-        animation-duration: .1s;
-        animation-fill-mode: forwards;
-        animation-timing-function: ease-in-out;
-        z-index: 2;
-
-        .c-query {
-            font-size: 1.5em;
-            margin: 0;
-        }
-    }
+    position: absolute;
+    transition: all .6s ease-in-out;
 
     .c-query {
         background: transparent;
         border: 2px solid rgba(255,255,255, .3);
         color: $selectedColor;
-        font-size: 2.5em;
-        width: 100%;
+        font-size: 1.5em;
         outline: none;
-        margin: 1em 0 1em 0;
+        margin: 1em 0;
         padding: .7em;
+        transition: font-size .3s ease-in-out;
+        width: 100%;
 
         @media #{$breakpoint-large} {
             font-size: 2.5em;
@@ -123,7 +128,6 @@
 	animation-name: active;
 	animation-duration: .2s;
 	animation-timing-function: ease-in-out;
-
     border-bottom: 1px dashed $secondaryColor;
 }
 
@@ -175,6 +179,18 @@
 
 // Sidebar
 
+.sidebar {
+    float: none;
+    clear: both;
+    width: 100%;
+
+    @media #{$breakpoint-medium} {
+        clear: none;
+        float: left;
+        width: 25%;
+    }
+}
+
 .sidebar--title {
     color: $selectedColor;
     font-size: 1em;
@@ -187,4 +203,5 @@
 
 .footer {
     background: rgba(0,0,0, .8);
+    min-height: 25em;
 }

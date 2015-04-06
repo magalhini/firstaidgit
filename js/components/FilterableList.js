@@ -10,6 +10,12 @@ var sortByKey = function(obj) {
     });
 };
 
+function keysrt(key, desc) {
+  return function(a,b){
+   return desc ? ~~(a[key] < b[key]) : ~~(a[key] > b[key]);
+  };
+}
+
 let ReactTransitionGroup = React.addons.CSSTransitionGroup;
 
 let FilterableListItem = React.createClass({
@@ -32,7 +38,7 @@ let FilterableListItem = React.createClass({
                     </h3>
                     <div className="item__instructions">
                         <div dangerouslySetInnerHTML={{__html: this.props.instructions}}></div>
-                        <button className="button item__button" onClick={this.resetQuery}>Search again</button>
+                        <button className="button item__button" onClick={this.props.resetQuery}>Search again</button>
                         <button className="button item__button" onClick={this.toggle}>Close</button>
                     </div>
                 </li>
@@ -57,20 +63,25 @@ let FilterableList = React.createClass({
     },
 
     componentDidMount() {
+        this.input = this.getDOMNode(this.refs.cInput);
         window.document.addEventListener('scroll', this.toggleFixed);
+    },
+
+    clearInput() {
+        var input = document.querySelector('.c-query');
+        input.focus();
+        this.setState({query: ''});
     },
 
     toggleFixed() {
         var height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
         var dToTop = (window.pageYOffset || document.scrollTop)  - (document.clientTop || 0);
-        //var el = React.findDOMNode(this.refs.mainEl);
-        var input = this.getDOMNode(this.refs.cInput);
 
-        if (dToTop > input.offsetTop) {
+        if (dToTop > (this.input.offsetTop + 100)) {
             this.state.fixed = true;
-            input.children[0].classList.add('fixed');
+            this.input.classList.add('fixed');
         } else {
-            input.children[0].classList.remove('fixed');
+            this.input.classList.remove('fixed');
         }
     },
 
@@ -81,10 +92,15 @@ let FilterableList = React.createClass({
     updateList(items, input) {
         var self = this;
 
+        items = items.sort(keysrt('title', false));
+
         return items.map(function(i) {
             var parsed = md.toHTML(i.content);
             return (
-                <FilterableListItem name={i.title} instructions={parsed} classes={self.classes}/>
+                <FilterableListItem name={i.title}
+                    instructions={parsed}
+                    resetQuery={self.clearInput}
+                    classes={self.classes}/>
             );
         });
     },
@@ -133,17 +149,19 @@ let FilterableList = React.createClass({
 
         return (
             <div className="c-filterableList row">
-                <div ref="mainEl" className="column-12 c-filterableList--search">
+                <div ref="mainEl" className="column-12 wrapper c-filterableList--search">
                     <input className={this.classes.input} type="text" ref="cInput"
                         placeholder = {this.props.placeholder}
                         value = {this.state.query} onChange = {this.handleChange}/>
                 </div>
-                <div className="column-9">
-                    {answerCount}
-                    <ul className="items">{items}</ul>
-                </div>
-                <div>
-                    <this.props.sidebar/>
+                <div className="c-filterableList--wrapper">
+                    <div className="column-9">
+                        {answerCount}
+                        <ul className="items">{items}</ul>
+                    </div>
+                    <aside className="sidebar column-3">
+                        <this.props.sidebar/>
+                    </aside>
                 </div>
             </div>
         );

@@ -1,4 +1,4 @@
-    [{
+[{
         "title": "Merge my local changes with another branch",
         "content": "This can be done while a regular `merge`, and you should *keep your merge history* by making sure to use `--no-ff`, which means _no fast forward_. \n\n Switch to the branch you're merging against, make sure it's up to date, and merge: \n\n `git merge <the-other-branch> --no-ff`",
         "help": "undo commit after push reset"
@@ -10,7 +10,7 @@
 },
 {
         "title": "Discard local file changes",
-        "content": "The easiest way to get rid of unwanted changes is by resetting a file or a folder to the current commit state. To do so, \n\n `git checkout myFile.txt` \n\n You can also reset a specific path: \n\n `git checkout -- myPath`",
+        "content": "The easiest way to get rid of unwanted changes is by resetting a file or a folder to the current commit state. To do so, you can use \n\n `git checkout myFile.txt` \n\n You can also reset a specific path instead: \n\n `git checkout -- myPath`",
         "help": "revert reset file specific version"
 },
 {
@@ -20,7 +20,7 @@
 },
 {
         "title": "Undo a commit message after pushing",
-        "content": "This is a two-step process. You will need to amend your commit message by using `git commit --amend`, and then you need to re-write your branch commit history by force pushing the commit: `git push <remote> <branch> --force` \n\n **Warning:** by force pushing, you can lose the remote branch commits if your local branch is not up to date, so be careful.",
+        "content": "This is a two-step process. You need to amend your commit message by using `git commit --amend`, and then you re-write your branch commit history by force pushing the commit: `git push <remote> <branch> --force` \n\n **Warning:** by force pushing, you can lose the remote branch commits if your local branch is not up to date, so be careful.",
         "help": "undo commit message after pushing amend"
 },
 {

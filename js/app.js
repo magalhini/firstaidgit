@@ -14,7 +14,7 @@ let App = React.createClass({
     render() {
         return (
             <div>
-            <div className="container--wrapper wrapper">
+            <section className="wrapper">
                 <div className="banner row">
                     <a href="#/">
                     <div className="banner__image column12">
@@ -26,7 +26,7 @@ let App = React.createClass({
 
                 <Navigation/>
                     <RouteHandler/>
-            </div>
+            </section>
             <Footer/>
             </div>
         );
