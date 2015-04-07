@@ -78,7 +78,6 @@ let FilterableList = React.createClass({
         var dToTop = (window.pageYOffset || document.scrollTop)  - (document.clientTop || 0);
 
         if (dToTop > (this.input.offsetTop + 100)) {
-            this.state.fixed = true;
             this.input.classList.add('fixed');
         } else {
             this.input.classList.remove('fixed');

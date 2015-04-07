@@ -5,8 +5,8 @@
 },
 {
         "title": "Undo commit before pushing changes",
-        "content": "If you made a commit that you wish to modify before pushing",
-        "help": "undo commit before push reset"
+        "content": "If you made a commit that you wish to modify or erase entirely, the git `reset` command can be of help here. \n\n `git reset HEAD~1 # undo last commit, keep the changes` \n\n `git reset --hard HEAD~1 #undo last commit, erase the changes` \n\n Naturally, be careful when using the last option as your local files will be discarded!",
+        "help": "undo commit local before push reset"
 },
 {
         "title": "Discard local file changes",
@@ -15,7 +15,7 @@
 },
 {
         "title": "Undo a commit message before pushing",
-        "content": "You can amend your commit message by typing `git commit --amend`, which will open your editor and allow you to make changes to the most recent commit message.",
+        "content": "You can amend your commit message by typing `git commit --amend`, which will open your editor and allow you to make changes to the most recent commit message. \n\n You can also modify the message directly, by using: \n\n `git commit --amend -m \"My new awesome message\"`",
         "help": "undo commit message before pushing amend"
 },
 {
@@ -44,14 +44,24 @@
         "help": "revert reset commit certain history"
 },
 {
+        "title": "Create a new branch keeping the changes on the current one",
+        "content": "Too often we start changing files on a branch to fix something, only then realising we didn't create a new branch before. Luckily, this is as simple as creating a new branch: \n\n `git checkout -b my-new-branch-name` \n\n This will bring any files from your current file into the new one, which you can commit then.",
+        "help": "create new branch keep changes"
+},
+{
         "title": "Rename my local and remote branch",
         "content": "Let’s say you have a _“fix-bug25”_ branch, and you want to rename it to _“hotfix-users”_. First, change the local branch: \n\n `git branch -m fix-bug25 hotfix-users` \n\n Now, the remote branch: you can’t rename the branch directly, so you’ll need to delete it and push it again with the new name. Make sure no one else within your team is working on it! Delete the branch: `git push origin :fix-bug25` \n\n And now let's push the new one: `git push origin hotfix-users`",
         "help": "rename wrong name branch"
 },
 {
         "title": "Revert a commit that was pushed",
-        "content": "This will revert one or more commits that you want to erase from the remote branch. You can either specify one by hash: \n\n `git revert b712c3c` \n\n Revert only the second to last commit: \n\n `git revert HEAD^` Or simply undo the last commit: \n\n `git revert -n HEAD`",
+        "content": "This will revert one or more commits that you want to erase from the remote branch. You can either specify one by hash: \n\n `git revert b712c3c` \n\n Revert only the second to last commit: \n\n `git revert HEAD^` \n\n Or simply undo the last commit without creating a revert commit: \n\n `git revert -n HEAD`",
         "help": "revert commit pushed after push"
+},
+{
+        "title": "Unstage a file",
+        "content": "To unstage a file added by mistake, the easiest option would be: \n\n `git reset HEAD unlovedFile.txt`",
+        "help": "unstage file from remove commit"
 },
 {
         "title": "Commited to the wrong branch",
