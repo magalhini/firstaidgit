@@ -31,18 +31,44 @@
 
 .banner__image {
     background: url("../assets/img/logo@1x.png") no-repeat;
-    width: 374px;
+    width: 700px;
     height: 129px;
     font-size: 0/0;
-    text-indent: -9999px;
+    position: relative;
     margin: 2em auto 1em;
 
     @include retina("../assets/img/logo@2x.png", 748px, 258px);
+
+    h1 {
+        margin: 0 0 1em 1em;
+        font-weight: 400;
+        letter-spacing: -2px;
+        color: #fff;
+        position: relative;
+        top: -.3em;
+        font-size: 4em;
+        text-transform: uppercase;
+
+        .mono {
+            font-family: monospace;
+            color: #FF9CB2;
+            font-size: 1.2em;
+            text-transform: lowercase;
+            font-weight: 200;
+            letter-spacing: -5px;
+        }
+    }
 }
 
 .banner__subtitle {
-    color: $secondaryColor;
     font-size: 1.5em;
+    position: absolute;
+    text-align: left;
+    line-height: 1.2;
+    top: 65px;
+    color: #fff;
+    left: 8.23em;
+
 }
 
 .main-navigation {
@@ -58,9 +84,7 @@
     .c-filterableList--wrapper {
         margin-top: 7em;
 
-        @media #{$breakpoint-large} {
-            margin-top: 13em;
-        }
+        @media #{$breakpoint-large} { margin-top: 13em; }
     }
 
     &.fixed {
@@ -76,6 +100,8 @@
                 margin: 0;
             }
         }
+
+        .icon-search { top: 2em; }
     }
 }
 
@@ -95,15 +121,29 @@
         transition: font-size .3s ease-in-out;
         width: 100%;
 
-        @media #{$breakpoint-large} {
-            font-size: 2.5em;
-        }
+        @media #{$breakpoint-large} { font-size: 2.5em; }
 
         &::-webkit-input-placeholder { color: rgba(255, 255, 255, .6); }
 
-        &:focus {
-            border: 2px solid rgba(255,255,255, .6);
+        &:focus { border: 2px solid rgba(255,255,255, .6); }
+
+        &:focus + .icon-search {
+            opacity: 1;
         }
+    }
+
+    .icon-search {
+        position: absolute;
+        opacity: .4;
+        top: 3.5em;
+        right: 3em;
+
+        @media #{$breakpoint-large} { top: 5.5em; }
+    }
+
+    .icon-search svg {
+        width: 2em;
+        height: 2em;
     }
 }
 
@@ -111,9 +151,7 @@
     padding: 0 .5em;
     color: $codeColor;
 
-    @media all and (min-width: 40em) {
-        font-size: 1.3em;
-    }
+    @media all and (min-width: 40em) { font-size: 1.3em; }
 }
 
 .c-filterableList .c-filterableList__number {
@@ -136,10 +174,26 @@
     cursor: pointer;
     font-weight: 600;
     margin-bottom: 1em;
+    position: relative;
     transition: all .1s ease-in-out;
+
+    .icon-arrow {
+        position: absolute;
+        right: 0;
+        opacity: .4;
+        transition: all .15s ease-in-out;
+
+        svg {height: 1.2em;}
+    }
 
     @media #{$breakpoint-large} {
         font-size: 1.3em;
+    }
+
+    &.is-open .icon-arrow {
+        opacity: 1;
+        transform: rotate(180deg);
+        transform-origin: 50% 40%;
     }
 
     &.is-open + .item__instructions {

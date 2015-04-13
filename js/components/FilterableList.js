@@ -1,14 +1,10 @@
 import React from 'react/addons';
 import Fuse from './../../assets/fuse.js';
 import markdown from 'markdown';
+import isvg from 'react-inlinesvg';
+import SVGIcon from './../utils/SVG';
 
 var md = markdown.markdown;
-
-var sortByKey = function(obj) {
-    Array.prototype.forEach.call(Object.keys(obj).sort(), function(i) {
-      obj[i] = obj[i];
-    });
-};
 
 function keysrt(key, desc) {
   return function(a,b){
@@ -18,11 +14,13 @@ function keysrt(key, desc) {
 
 let ReactTransitionGroup = React.addons.CSSTransitionGroup;
 
+/**
+ * A list item <li>
+ * @type {Object}
+ */
 let FilterableListItem = React.createClass({
     getInitialState() {
-        return {
-            active: false
-        };
+        return { active: false };
     },
 
     toggle() {
@@ -35,6 +33,7 @@ let FilterableListItem = React.createClass({
                 <li key={this.props.name} className="item">
                     <h3 onClick={this.toggle} className={this.state.active ? 'item__title is-open' : 'item__title'}>
                         {this.props.name}
+                        <SVGIcon class="icon-arrow" icon="arrowDown"/>
                     </h3>
                     <div className="item__instructions">
                         <div dangerouslySetInnerHTML={{__html: this.props.instructions}}></div>
@@ -47,6 +46,10 @@ let FilterableListItem = React.createClass({
     }
 })
 
+/**
+ * The Search and Results wrapper component
+ * @type {Object}
+ */
 let FilterableList = React.createClass({
 
     componentWillMount() {
@@ -91,6 +94,7 @@ let FilterableList = React.createClass({
     updateList(items, input) {
         var self = this;
 
+        // Sort alphabetically. Not working 100% though.
         items = items.sort(keysrt('title', false));
 
         return items.map(function(i) {
@@ -152,6 +156,7 @@ let FilterableList = React.createClass({
                     <input className={this.classes.input} type="text" ref="cInput"
                         placeholder = {this.props.placeholder}
                         value = {this.state.query} onChange = {this.handleChange}/>
+                        <SVGIcon icon="search" class="icon-search"/>
                 </div>
                 <div className="c-filterableList--wrapper">
                     <div className="column-9">

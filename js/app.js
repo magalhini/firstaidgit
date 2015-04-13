@@ -15,17 +15,18 @@ let App = React.createClass({
         return (
             <div>
             <section className="wrapper">
+                <Navigation/>
                 <div className="banner row">
                     <a href="#/">
                     <div className="banner__image column12">
-                        First Aid Git
+                        <h1>First Aid <span className="mono">git</span></h1>
+                            <span className="banner__subtitle">A searchable collection of
+                                the most git FAQ when things go wrong
+                            </span>
                     </div>
                     </a>
-                    <span className="banner__subtitle">A searchable collection of quick git fixes</span>
                 </div>
-
-                <Navigation/>
-                    <RouteHandler/>
+                <RouteHandler/>
             </section>
             <Footer/>
             </div>

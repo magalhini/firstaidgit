@@ -36,6 +36,15 @@ input {
     font-family: $typeStack;
 }
 
+svg {
+    width: 1em;
+    height: 1em;
+}
+
+svg path {
+    fill: white;
+}
+
 input:-webkit-placeholder {
     color: #fff;
 }

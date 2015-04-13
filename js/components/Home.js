@@ -12,7 +12,7 @@ let Home = React.createClass({
         var self = this;
 
         if (this.isMounted()) {
-            fetch('http://localhost:8080/assets/posts.json')
+            fetch('/assets/posts.json')
                 .then(function(res) {
                     return res.json();
                 }).then(function(json) {
