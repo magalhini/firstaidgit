@@ -152,7 +152,7 @@ let FilterableList = React.createClass({
 
         return (
             <div className="c-filterableList row">
-                <div ref="mainEl" className="column-12 wrapper c-filterableList--search">
+                <div ref="mainEl" className="column-12 wrapper anim-elem c-filterableList--search">
                     <input className={this.classes.input} type="text" ref="cInput"
                         placeholder = {this.props.placeholder}
                         value = {this.state.query} onChange = {this.handleChange}/>

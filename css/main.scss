@@ -51,7 +51,7 @@
 
         .mono {
             font-family: monospace;
-            color: #FF9CB2;
+            color: $monoColor;
             font-size: 1.2em;
             text-transform: lowercase;
             font-weight: 200;
@@ -258,4 +258,12 @@
 .footer {
     background: rgba(0,0,0, .8);
     min-height: 25em;
+}
+
+// States
+
+.error-state {
+    font-size: 2em;
+    text-align: center;
+    padding: 2em;
 }

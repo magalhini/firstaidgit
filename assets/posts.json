@@ -14,6 +14,11 @@
         "help": "recover deleted branch"
 },
 {
+        "title": "Display the commits that have deleted files",
+        "content": "You can quickly check which commits included deleted files by using the following command: \n\n `git log --diff-filter=D --summary` \n\n This will show you the commits in which files were removed.",
+        "help": "display show deleted files history"
+},
+{
         "title": "Restore a deleted file",
         "content": "If you deleted a file by accident, you can get it back by checking it out again: \n\n `git checkout myFile.txt` \n\n If you need to restore a file from a certain point in time in your commit history, grab the hash of that commit and run: \n\n `git checkout $commit~1 myFile.txt`",
         "help": "restore recover deleted file"
@@ -75,6 +80,6 @@
 },
 {
         "title": "Commited to the wrong branch",
-        "content": "Start by switching to the new branch you forgot to create, by typing `git checkout -b <new-branch>`. Switch back to the original branch now `git checkout <original-branch>` and now reset to the last commit you want to keep. \n\n To do so, you can type `git log` and save the hash of the last commit that you want to keep. Let's say this is `a31a45c`. \n\n Now you have to reset it: `git reset --hard a31a45c` and push this last forced reset. \n\n **Warning:** Make sure no one has commited to that original branch in the meantime, or changes might be lost!",
+        "content": "Start by switching to the new branch you forgot to create, by typing \n\n `git checkout -b <new-branch>`. Switch back to the original branch now: \n\n `git checkout <original-branch>` \n\n ...and reset to the last commit you want to keep. \n\n To do so, you can type `git log` and save the hash (SHA1) of the last commit that you want to keep. Let's say this is `a31a45c`. \n\n Now you have to reset it: `git reset --hard a31a45c` and push this last forced reset. \n\n **Warning:** Make sure no one has commited to that original branch in the meantime, or changes might be lost!",
         "help": "commit wrong branch master accident"
 }]

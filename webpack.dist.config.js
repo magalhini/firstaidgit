@@ -38,7 +38,9 @@ var config = {
                 ]
             },
             { test: /\.js?$/, loaders: ['react-hot', 'babel'], exclude: /node_modules/ },
-            { test: /\.json$/, loader: 'json' },
+            { test: /\.(jpg|png|gif)$/, loader: 'file' },
+            { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: 'file' },
+            { test: /\.json$/, loader: 'json' }
         ]
     },
     plugins: [

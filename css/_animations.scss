@@ -3,6 +3,16 @@
     100% {top: 0; transform: scale(1); transform-origin: 40% 40%;}
 }
 // Animations
+//
+.anim-elem {
+     animation: anim-elem 0.3s both;
+     animation-delay: 0.15s;
+}
+
+@keyframes anim-elem {
+  0% { opacity: 0; transform: translate3d(0, 25px, 0); }
+  100% { opacity: 1; transform: translate3d(0, 0, 0); }
+}
 
 .example-enter {
     opacity: 0.01;

@@ -17,11 +17,31 @@ let Home = React.createClass({
                     return res.json();
                 }).then(function(json) {
                     self.setState({ data: json });
+                }).catch(function(err) {
+                    console.log(err);
+                    self.setErrorState(err);
                 });
         }
     },
 
-    render() {
+    setErrorState(error) {
+        this.setState({
+            error: error
+        });
+    },
+
+    render(error) {
+        if (this.state.error) {
+            var self = this;
+
+            // Probably shouldn't be calling this directly.
+            setTimeout(function(){
+                self.componentDidMount();
+            }, 5000);
+
+            return (<h1 className="error-state">Oh noes, something went wrong pulling the data!</h1>);
+        }
+
         return (
             <section className="main-content">
                 <FilterableList
