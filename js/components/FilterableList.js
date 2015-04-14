@@ -76,6 +76,7 @@ let FilterableList = React.createClass({
         this.setState({query: ''});
     },
 
+    // TODO: throttle this.
     toggleFixed() {
         var height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
         var dToTop = (window.pageYOffset || document.scrollTop)  - (document.clientTop || 0);
@@ -159,7 +160,7 @@ let FilterableList = React.createClass({
                         <SVGIcon icon="search" class="icon-search"/>
                 </div>
                 <div className="c-filterableList--wrapper">
-                    <div className="column-9">
+                    <div className="column-9 ms-fw">
                         {answerCount}
                         <ul className="items">{items}</ul>
                     </div>

@@ -9,6 +9,11 @@
      animation-delay: 0.15s;
 }
 
+.anim-elem-delay {
+    animation: anim-elem 0.3s both;
+    animation-delay: 0.25s;
+}
+
 @keyframes anim-elem {
   0% { opacity: 0; transform: translate3d(0, 25px, 0); }
   100% { opacity: 1; transform: translate3d(0, 0, 0); }

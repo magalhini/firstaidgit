@@ -5,6 +5,7 @@ import { DefaultRoute, Link, Route, RouteHandler } from 'react-router';
 import Home from './components/Home.js';
 import About from './components/About.js';
 import Footer from './components/Footer.js';
+import SVGIcon from './utils/SVG.js';
 
 import Navigation from './components/Navigation.js';
 
@@ -18,8 +19,10 @@ let App = React.createClass({
                 <Navigation/>
                 <div className="banner row">
                     <a href="#/">
-                    <div className="banner__image column12">
-                        <h1>First Aid <span className="mono">git</span></h1>
+                    <div className="banner__image column12 anim-elem-delay">
+                        <h1>First Aid <span className="mono">
+                            <SVGIcon class="icon-github" icon="github"/>
+                        </span></h1>
                             <span className="banner__subtitle">A searchable collection of
                                 the most git FAQ when things go wrong
                             </span>

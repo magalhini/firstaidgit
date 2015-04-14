@@ -40,3 +40,9 @@ $breakpoint-large: "only screen and (min-width: 60em)";
     width: 100% / 12 * $i;
   }
 }
+
+.ms-fw {
+    @media all and (max-width: 40em) {
+        width: 100%;
+    }
+}

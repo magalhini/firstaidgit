@@ -4,6 +4,15 @@
 @import 'animations';
 @import 'mixins';
 
+.section-title {
+    font-size: 2em;
+    margin-top: .35em;
+}
+
+.section-copy {
+    font-size: 1.2em;
+}
+
 .button {
     background: none;
     color: #fff;
@@ -30,44 +39,56 @@
 }
 
 .banner__image {
-    background: url("../assets/img/logo@1x.png") no-repeat;
-    width: 700px;
+    background: none;
     height: 129px;
-    font-size: 0/0;
     position: relative;
     margin: 2em auto 1em;
 
-    @include retina("../assets/img/logo@2x.png", 748px, 258px);
+    @media #{$breakpoint-medium} {
+        background: url("../assets/img/logo@1x.png") no-repeat;
+        width: 700px;
+        @include retina("../assets/img/logo@2x.png", 748px, 258px);
+    }
+
 
     h1 {
-        margin: 0 0 1em 1em;
+        margin-bottom: 1em;
         font-weight: 400;
-        letter-spacing: -2px;
         color: #fff;
         position: relative;
         top: -.3em;
         font-size: 4em;
-        text-transform: uppercase;
+        letter-spacing: -3px;
+        text-transform: lowercase;
 
-        .mono {
-            font-family: monospace;
-            color: $monoColor;
-            font-size: 1.2em;
-            text-transform: lowercase;
-            font-weight: 200;
-            letter-spacing: -5px;
+        @media #{$breakpoint-medium} {
+            margin: 0 0 1em 1em;
+        }
+
+        .icon-github {
+            position: relative;
+            top: 10px;
+
+            path {
+                fill: $monoColor;
+            }
         }
     }
 }
 
 .banner__subtitle {
-    font-size: 1.5em;
+    font-size: 1.3em;
     position: absolute;
     text-align: left;
     line-height: 1.2;
-    top: 65px;
+    top: 96px;
     color: #fff;
-    left: 8.23em;
+    left: 1.1em;
+
+    @media #{$breakpoint-large} {
+        left: 11.9em;
+        top: 65px;
+    }
 
 }
 
@@ -121,7 +142,7 @@
         transition: font-size .3s ease-in-out;
         width: 100%;
 
-        @media #{$breakpoint-large} { font-size: 2.5em; }
+        @media #{$breakpoint-large} { font-size: 2em; }
 
         &::-webkit-input-placeholder { color: rgba(255, 255, 255, .6); }
 
@@ -138,7 +159,7 @@
         top: 3.5em;
         right: 3em;
 
-        @media #{$breakpoint-large} { top: 5.5em; }
+        @media #{$breakpoint-large} { top: 5em; }
     }
 
     .icon-search svg {
@@ -253,6 +274,11 @@
     + p {
         margin-bottom: 2.5em;
     }
+}
+
+.sidebar .icon-github svg {
+    height: 5em;
+    width: 5em;
 }
 
 .footer {
