@@ -20,7 +20,7 @@ let About = React.createClass({
                         <div className="column-12">
                             <h2 className="section-title">The source code looks a bit messy...?</h2>
                             <p className="section-copy">That's because it is messy! Since this wasn't meant to become a project
-                            in the first place, so I will be cleaning up the code as the project is being maintained.</p>
+                            in the first place, I wasn't paying too much attention to its structure... so I will be cleaning up the code as the project is being maintained.</p>
                         </div>
                     </div>
 

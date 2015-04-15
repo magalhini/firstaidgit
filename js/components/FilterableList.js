@@ -113,7 +113,7 @@ let FilterableList = React.createClass({
         return (
             <li className="item">
                 <h3>No results for "{this.state.query}"</h3>
-                <p><a href="#">Submit a help item?</a></p>
+                <p><a href="mailto:magalhini@gmail.com?subject=I need something from you!">Submit a help item?</a></p>
             </li>);
     },
 
