@@ -13,6 +13,7 @@ require('./../css/main.scss');
 
 let App = React.createClass({
     render() {
+        console.log('Hello, gorgeous. I\'m here to help.');
         return (
             <div>
             <section className="wrapper">
@@ -24,7 +25,7 @@ let App = React.createClass({
                             <SVGIcon class="icon-github" icon="github"/>
                         </span></h1>
                             <span className="banner__subtitle">A searchable collection of
-                                the most git frequenty asked questions
+                                the most Git frequently asked questions
                             </span>
                     </div>
                     </a>

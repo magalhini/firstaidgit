@@ -6,10 +6,16 @@ import SVGIcon from './../utils/SVG';
 
 var md = markdown.markdown;
 
+/**
+ * Sort keysrt
+ * @param  {String} key  The key to sort by
+ * @param  {Boolean} desc Descending?
+ * @return {Object}      The sorted object
+ */
 function keysrt(key, desc) {
-  return function(a,b){
-   return desc ? ~~(a[key] < b[key]) : ~~(a[key] > b[key]);
-  };
+    return function(a,b){
+        return desc ? ~~(a[key] < b[key]) : ~~(a[key] > b[key]);
+    };
 }
 
 let ReactTransitionGroup = React.addons.CSSTransitionGroup;
@@ -151,7 +157,7 @@ let FilterableList = React.createClass({
         if (!items.length && flatQuery) {
             items = this.renderNoItems(); // No matches
         } else if (!items.length && !flatQuery) {
-            items = (<li>Loading content...</li>); // Still loading
+            items = (<li>Loading content... help is on the way.</li>); // Still loading
         }
 
         // Title of list, depending on the state of the search
@@ -170,9 +176,11 @@ let FilterableList = React.createClass({
                     <input className={this.classes.input} type="text" ref="cInput"
                         placeholder = {this.props.placeholder}
                         value = {this.state.query} onChange = {this.handleChange}/>
+
                         <ReactTransitionGroup transitionName="example">
                             {inputIcon}
                         </ReactTransitionGroup>
+
                     <label className="c-filterableList__help-label">e.g., undo commit before push</label>
                 </div>
                 <div className="c-filterableList__wrapper">

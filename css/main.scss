@@ -95,12 +95,12 @@
 }
 
 .main-navigation {
-    .main-navigation--item {
+    .main-navigation__item {
         display: inline-block;
         margin-right: 1em;
     }
 
-    .main-navigation--item a {
+    .main-navigation__item a {
         text-transform: none;
         border-bottom: none;
         font-weight: 600;
@@ -111,8 +111,9 @@
     position: relative;
 
     .c-filterableList__wrapper {
-        margin-top: 7em;
+        margin-top: 9em;
 
+        @media #{$breakpoint-medium} { margin-top: 11em; }
         @media #{$breakpoint-large} { margin-top: 13em; }
     }
 

@@ -35,12 +35,16 @@ let Home = React.createClass({
             var self = this;
 
             // Probably shouldn't be calling this directly.
+            // TODO: Don't do it.
             setTimeout(function(){
                 self.componentDidMount();
             }, 5000);
 
             return (<h1 className="error-state">Oh noes, something went wrong pulling the data!</h1>);
         }
+
+        // It's very bad that the Sidebar component is being injected here.
+        // It should live completely separate from this component.
 
         return (
             <section className="main-content">

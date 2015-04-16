@@ -7,7 +7,7 @@ let Footer = React.createClass({
                 <div className="wrapper">
                     <div className="column-4">
                         <h3>Author</h3>
-                        <p>First Aid git is maintained by <a href="www.ricardofilipe.com">Ricardo Magalhães</a>.</p>
+                        <p>First Aid git is maintained by <a href="http://www.ricardofilipe.com">Ricardo Magalhães</a>.</p>
                         <p><a href="#/about">Read more</a> about the project.</p>
                     </div>
                     <div className="column-3">
@@ -22,7 +22,7 @@ let Footer = React.createClass({
                     <div className="column-3">
                         <h3>Credits</h3>
                         Searching algorithm by <a href="http://kiro.me/projects/fuse.html">Fuse.js</a> and
-                        markdown converter is <a href="https://github.com/showdownjs/showdown">Showdown.js</a>
+                        markdown converter by <a href="https://github.com/showdownjs/showdown">Showdown.js</a>
                     </div>
                 </div>
             </footer>
