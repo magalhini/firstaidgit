@@ -1,5 +1,5 @@
 import React from 'react/addons';
-import Fuse from './../../assets/fuse.js';
+import Fuse from './../../assets/vendor/fuse.js';
 import markdown from 'markdown';
 import isvg from 'react-inlinesvg';
 import SVGIcon from './../utils/SVG';
@@ -131,6 +131,7 @@ let FilterableList = React.createClass({
     render() {
         var items = this.props.data,
             answerCount = "",
+            inputIcon,
             flatQuery = this.state.query.trim().toLowerCase();
 
         // Begin fuzzy search
@@ -151,13 +152,22 @@ let FilterableList = React.createClass({
         // Title of list, depending on the state of the search
         answerCount = this.renderCount(items.length, this.props.data.length);
 
+        // Display the glass or the cross icon depending on query state
+        if (!flatQuery) {
+            inputIcon = <SVGIcon icon="search" ref="iconAction" class="icon icon-search"/>
+        } else {
+            inputIcon = <SVGIcon callback={this.clearInput} icon="cross" class="icon icon-cross"/>
+        }
+
         return (
             <div className="c-filterableList row">
                 <div ref="mainEl" className="column-12 wrapper anim-elem c-filterableList__search">
                     <input className={this.classes.input} type="text" ref="cInput"
                         placeholder = {this.props.placeholder}
                         value = {this.state.query} onChange = {this.handleChange}/>
-                        <SVGIcon icon="search" class="icon-search"/>
+                        <ReactTransitionGroup transitionName="example">
+                            {inputIcon}
+                        </ReactTransitionGroup>
                     <label className="c-filterableList__help-label">e.g., undo commit before push</label>
                 </div>
                 <div className="c-filterableList__wrapper">

@@ -135,7 +135,9 @@
             }
         }
 
-        .icon-search { top: 2em; }
+        .icon {
+            top: 2.3em;
+        }
     }
 }
 
@@ -160,10 +162,9 @@
 
         &::-webkit-input-placeholder { color: rgba(255, 255, 255, .6); }
         &::-moz-placeholder { color: rgba(255, 255, 255, .6); }
-
         &:focus { border: 2px solid rgba(255,255,255, .6); }
 
-        &:focus + .icon-search {
+        &:focus + span .icon {
             opacity: 1;
         }
     }
@@ -174,16 +175,18 @@
         opacity: .6;
     }
 
-    .icon-search {
+    .icon {
+        cursor: pointer;
         position: absolute;
         opacity: .4;
         top: 3.5em;
         right: 3em;
+        transition: all .2s ease-in-out;
 
         @media #{$breakpoint-large} { top: 5em; }
     }
 
-    .icon-search svg {
+    .icon svg {
         width: 2em;
         height: 2em;
     }

@@ -20,7 +20,7 @@ var config = {
     },
     debug: true,
     output: {
-        publicPath: '/',
+        publicPath: './',
         path: __dirname + '/build',
         filename: '[name].[hash].js',
         chunkFilename: '[id].[hash].js'

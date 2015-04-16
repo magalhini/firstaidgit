@@ -3,8 +3,11 @@
   <head>
     <meta charset="utf-8">
     <title>First Aid git</title>
+    <meta name="description" content="Quickly find the answers and commands
+        to the most frequently asked git related issues.">
+    <meta name="keyword" content="github, faq, git, help, git flight, firstaid git, help, git commands">
 
-    <script src="bower_components/showdown/src/showdown.js"></script>
+    <script src="assets/vendor/Showdown.min.js"></script>
 
     {% if (o.webpack.assetsByChunkName.app[1]) { %}
         <link rel="stylesheet" href="{%=o.htmlWebpackPlugin.options.publicPath%}{%=o.webpack.assetsByChunkName.app[1]%}">
@@ -13,7 +16,6 @@
 
     <body>
         <section id="app" class="main-container">
-
         </section>
         {% if (o.htmlWebpackPlugin.options.webpackDevServer) { %}
         <!-- Inject webpack-dev-server script if necessary -->

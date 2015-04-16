@@ -19,6 +19,11 @@
         "help": "display show deleted files history"
 },
 {
+        "title": "Rebase my branch with master",
+        "content": "To catch-up with the latest changes from master (or any other branch you started from), you can and should rebase against it. Say you're working on the `foobar` branch: \n\n `git checkout foobar` \n\n Followed by a rebase: \n\n `git rebase master` \n\n This applies the `origin` commits on top of master. When you're done with solving conflicts, continue by using `git rebase --continue`. At this point you can continue to work on your branch or merge it against master. \n\n Learn more about [rebases](https://github.com/k88hudson/git-flight-rules#i-need-to-combine-commits)",
+        "help": "rebase branch against master changes"
+},
+{
         "title": "Restore a deleted file",
         "content": "If you deleted a file by accident, you can get it back by checking it out again: \n\n `git checkout myFile.txt` \n\n If you need to restore a file from a certain point in time in your commit history, grab the hash of that commit and run: \n\n `git checkout $commit~1 myFile.txt`",
         "help": "restore recover deleted file"
@@ -29,9 +34,24 @@
         "help": "revert reset file specific version"
 },
 {
+        "title": "Clear all stashed states",
+        "content": "You can clear all stashed states by using: \n\n `git stash clear`",
+        "help": "clear stash"
+},
+{
+        "title": "Remove untracked files and folders",
+        "content": "To remove all untracked files from your working copy: \n\n `git clean -f` \n\n To remove all untracked files and folders: \n\n `git clean -fd`",
+        "help": "remove clear untracked files"
+},
+{
         "title": "Undo a commit message before pushing",
         "content": "You can amend your commit message by typing `git commit --amend`, which will open your editor and allow you to make changes to the most recent commit message. \n\n You can also modify the message directly, by using: \n\n `git commit --amend -m \"My new awesome message\"`",
         "help": "undo commit message before pushing amend"
+},
+{
+        "title": "Search for a specific commit message in all commits",
+        "content": "You can search for a specific commit log by matching it on a regular expression. Use: \n\n `git log --grep <your-query>`",
+        "help": "search commit message regexp log find"
 },
 {
         "title": "Undo a commit message after pushing",
@@ -40,7 +60,7 @@
 },
 {
         "title": "Combine two or more commits",
-        "content": "You will need to use an interactive rebase. If you're rebasing against master, you star the process by typing `git rebase -i master`. However, if you're not rebasing against a branch, you'll need to rebase against your `HEAD`.\n\n If you want to squash your last 2 commits, you can use `git rebase -i HEAD~2`.\n\n You will then be prompted to follow instructions to pick commits. If you wish to combine all your commits with the oldest *first* commit, leave the first line with `pick` and change the letter to `f` on all other commits. ",
+        "content": "You will need to use an interactive rebase. If you're rebasing against master, you star the process by typing `git rebase -i master`. However, if you're not rebasing against a branch, you'll need to rebase against your `HEAD`.\n\n If you want to squash your last 2 commits, you can use: \n\n `git rebase -i HEAD~2`.\n\n You will then be prompted to follow instructions to pick commits. If you wish to combine all your commits with the oldest *first* commit, leave the first line with `pick` and change the letter to `f` on all other commits. Learn more about [rebases](https://github.com/k88hudson/git-flight-rules#i-need-to-combine-commits) ",
         "help": "combine commits join rebase"
 },
 {
@@ -60,7 +80,7 @@
 },
 {
         "title": "Create a new branch with the changes on the current one",
-        "content": "Too often we start changing files on a branch to fix something, only then realising we didn't create a new branch before. Luckily, this is as simple as creating a new branch: \n\n `git checkout -b my-new-branch-name` \n\n This will bring any files from your current file into the new one, which you can commit then.",
+        "content": "Too often we start changing files on a branch to fix something, only then realising we didn't create a new branch before. Luckily, this is as simple as creating a new branch: \n\n `git checkout -b my-new-branch-name` \n\n This will bring any files from your current branch into the new one, which you can commit then.",
         "help": "create new branch keep changes"
 },
 {
@@ -69,9 +89,9 @@
         "help": "rename wrong name branch"
 },
 {
-        "title": "Revert a commit that was pushed",
+        "title": "Undo a commit after pushing it to master",
         "content": "This will revert one or more commits that you want to erase from the remote branch. You can either specify one by hash: \n\n `git revert b712c3c` \n\n Revert only the second to last commit: \n\n `git revert HEAD^` \n\n Or simply undo the last commit without creating a revert commit: \n\n `git revert -n HEAD`",
-        "help": "revert commit pushed after push"
+        "help": "undo revert commit pushed after push"
 },
 {
         "title": "Unstage a file",

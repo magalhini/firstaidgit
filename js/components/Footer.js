@@ -19,6 +19,11 @@ let Footer = React.createClass({
                             <li><a href="https://try.github.io/levels/1/challenges/1">Github School</a></li>
                         </ul>
                     </div>
+                    <div className="column-3">
+                        <h3>Credits</h3>
+                        Searching algorithm by <a href="http://kiro.me/projects/fuse.html">Fuse.js</a> and
+                        markdown converter is <a href="https://github.com/showdownjs/showdown">Showdown.js</a>
+                    </div>
                 </div>
             </footer>
         );
