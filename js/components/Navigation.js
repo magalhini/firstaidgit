@@ -10,7 +10,7 @@ let Navigation = React.createClass({
                         <Link to="home">Home</Link>
                     </li>
                     <li className="main-navigation--item">
-                        <Link to="about">About this project</Link>
+                        <Link to="about">About</Link>
                     </li>
                 </ul>
             </section>

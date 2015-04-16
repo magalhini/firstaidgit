@@ -7,9 +7,9 @@ let About = React.createClass({
                 <div className="row">
                     <div className="column-12">
                         <h2 className="section-title">What is this all about?</h2>
-                        <p className="section-copy">First Aid git started as a dummy project while I was learning more about
-                        using <a href="http://webpack.github.io">Webpack</a> with <a href="https://facebook.github.io/react/">React</a>. Halfway through it, I decided to try and make something
-                        useful out of it, and so First Aid git was born!</p>
+                        <p className="section-copy">First Aid git started out as a dummy project while I was learning more about
+                        using <a href="http://webpack.github.io">Webpack</a> with <a href="https://facebook.github.io/react/">React</a>. Halfway through it I thought about making something
+                        useful out of it, and so I began to collect a few posts about the most frequently asked questions about git issues.</p>
 
                     <p className="section-copy">The motivation behind it was to have an easy and quick way to
                     search through the most common git relate issues when they arise, as I find myself having
@@ -27,7 +27,7 @@ let About = React.createClass({
                     <div className="row">
                         <div className="column-12">
                             <h2 className="section-title">Can I contribute?</h2>
-                                <p className="section-copy">You should! Submit your changes on Github or drop a <a href="http://www.twitter.com/magalhini">tweet</a>.</p>
+                                <p className="section-copy">You should! Submit your changes on <a href="https://github.com/magalhini/firstaidgit">Github</a> or drop a <a href="http://www.twitter.com/magalhini">tweet</a>.</p>
                         </div>
                     </div>
                 </div>

@@ -14,7 +14,7 @@
 }
 
 .button {
-    background: none;
+    background: rgba(255,255,255,.1);
     color: #fff;
     font-family: $typeStack;
     font-size: .8em;
@@ -31,7 +31,7 @@
 }
 
 .main-container {
-    margin: 1em auto;
+    margin: 1em 0 auto;
 }
 
 .banner {
@@ -46,10 +46,13 @@
 
     @media #{$breakpoint-medium} {
         background: url("../assets/img/logo@1x.png") no-repeat;
-        width: 700px;
+        width: 610px;
         @include retina("../assets/img/logo@2x.png", 748px, 258px);
     }
 
+    @media #{$breakpoint-large} {
+        width: 700px;
+    }
 
     h1 {
         margin-bottom: 1em;
@@ -89,7 +92,6 @@
         left: 11.9em;
         top: 65px;
     }
-
 }
 
 .main-navigation {
@@ -97,19 +99,30 @@
         display: inline-block;
         margin-right: 1em;
     }
+
+    .main-navigation--item a {
+        text-transform: none;
+        border-bottom: none;
+        font-weight: 600;
+    }
 }
 
 .c-filterableList {
     position: relative;
 
-    .c-filterableList--wrapper {
+    .c-filterableList__wrapper {
         margin-top: 7em;
 
         @media #{$breakpoint-large} { margin-top: 13em; }
     }
 
+    // Fixed to the top state
     &.fixed {
-        .c-filterableList--search {
+        .c-filterableList__help-label {
+            display: none;
+        }
+
+        .c-filterableList__search {
             background: $bodyColor;
             position: fixed;
             top: 0;
@@ -127,7 +140,7 @@
 }
 
 // Filterable Component
-.c-filterableList--search {
+.c-filterableList__search {
     position: absolute;
     transition: all .6s ease-in-out;
 
@@ -137,6 +150,7 @@
         color: $selectedColor;
         font-size: 1.5em;
         outline: none;
+        letter-spacing: -1px;
         margin: 1em 0;
         padding: .7em;
         transition: font-size .3s ease-in-out;
@@ -145,12 +159,19 @@
         @media #{$breakpoint-large} { font-size: 2em; }
 
         &::-webkit-input-placeholder { color: rgba(255, 255, 255, .6); }
+        &::-moz-placeholder { color: rgba(255, 255, 255, .6); }
 
         &:focus { border: 2px solid rgba(255,255,255, .6); }
 
         &:focus + .icon-search {
             opacity: 1;
         }
+    }
+
+    .c-filterableList__help-label {
+        position: relative;
+        top: -1.5em;
+        opacity: .6;
     }
 
     .icon-search {
@@ -283,7 +304,11 @@
 
 .footer {
     background: rgba(0,0,0, .8);
-    min-height: 25em;
+    min-height: 16em;
+
+    a {
+        border-bottom: none;
+    }
 }
 
 // States

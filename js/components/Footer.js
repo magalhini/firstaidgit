@@ -3,13 +3,24 @@ import React from 'react';
 let Footer = React.createClass({
     render() {
         return (
-            <div className="footer row">
+            <footer className="footer row">
                 <div className="wrapper">
-                    <div className="column-12">
-                        <h2>What is this all about</h2>
+                    <div className="column-4">
+                        <h3>Author</h3>
+                        <p>First Aid git is maintained by <a href="www.ricardofilipe.com">Ricardo Magalhães</a>.</p>
+                        <p><a href="#/about">Read more</a> about the project.</p>
+                    </div>
+                    <div className="column-3">
+                        <h3>More resources</h3>
+                        <ul>
+                            <li><a href="https://github.com/k88hudson/git-flight-rules">Git Flight Rules</a></li>
+                            <li><a href="http://git-scm.com/documentation">Git Documenation</a></li>
+                            <li><a href="http://git-scm.com/book/en/v2/Getting-Started-Git-Basics">Git Basics</a></li>
+                            <li><a href="https://try.github.io/levels/1/challenges/1">Github School</a></li>
+                        </ul>
                     </div>
                 </div>
-            </div>
+            </footer>
         );
     }
 });

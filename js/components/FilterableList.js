@@ -153,13 +153,14 @@ let FilterableList = React.createClass({
 
         return (
             <div className="c-filterableList row">
-                <div ref="mainEl" className="column-12 wrapper anim-elem c-filterableList--search">
+                <div ref="mainEl" className="column-12 wrapper anim-elem c-filterableList__search">
                     <input className={this.classes.input} type="text" ref="cInput"
                         placeholder = {this.props.placeholder}
                         value = {this.state.query} onChange = {this.handleChange}/>
                         <SVGIcon icon="search" class="icon-search"/>
+                    <label className="c-filterableList__help-label">e.g., undo commit before push</label>
                 </div>
-                <div className="c-filterableList--wrapper">
+                <div className="c-filterableList__wrapper">
                     <div className="column-9 ms-fw">
                         {answerCount}
                         <ul className="items">{items}</ul>
