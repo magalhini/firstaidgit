@@ -5,7 +5,6 @@ let Sidebar = React.createClass({
     render() {
         return (
             <div className="sidebar-wrapper">
-                <h2 className="sidebar--title">First Aid Git</h2>
                 <a className="nb" href="https://github.com/magalhini/firstaidgit">
                     <SVGIcon class="icon-github" icon="githubFull"/>
                 </a>

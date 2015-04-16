@@ -66,13 +66,17 @@ let FilterableList = React.createClass({
     },
 
     componentDidMount() {
+        // Why doesn't this retrieve the actual input?
         this.input = this.getDOMNode(this.refs.cInput);
+
+        // ...because this is ugly:
+        this.inputElement = document.querySelector('.c-query');
+        this.inputElement.focus();
         window.document.addEventListener('scroll', this.toggleFixed);
     },
 
     clearInput() {
-        var input = document.querySelector('.c-query');
-        input.focus();
+        this.inputElement.focus();
         this.setState({query: ''});
     },
 
@@ -99,6 +103,7 @@ let FilterableList = React.createClass({
         items = items.sort(keysrt('title', false));
 
         return items.map(function(i) {
+            // Markdown is awesome
             var parsed = md.toHTML(i.content);
             return (
                 <FilterableListItem name={i.title}
@@ -124,8 +129,8 @@ let FilterableList = React.createClass({
         if (count === length) word = 'All topics';
 
         return (<p className="c-filterableList__number">
-            <b>{word}</b> ({count})
-        </p>);
+                  <b>{word}</b> ({count})
+                </p>);
     },
 
     render() {
@@ -144,9 +149,9 @@ let FilterableList = React.createClass({
         items = this.updateList(items);
 
         if (!items.length && flatQuery) {
-            items = this.renderNoItems();
+            items = this.renderNoItems(); // No matches
         } else if (!items.length && !flatQuery) {
-            items = (<li>Loading content...</li>);
+            items = (<li>Loading content...</li>); // Still loading
         }
 
         // Title of list, depending on the state of the search

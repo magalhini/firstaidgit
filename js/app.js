@@ -24,7 +24,7 @@ let App = React.createClass({
                             <SVGIcon class="icon-github" icon="github"/>
                         </span></h1>
                             <span className="banner__subtitle">A searchable collection of
-                                the most git FAQ when things go wrong
+                                the most git frequenty asked questions
                             </span>
                     </div>
                     </a>
