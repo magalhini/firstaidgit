@@ -147,7 +147,7 @@ let FilterableList = React.createClass({
 
         // Begin fuzzy search
         if (flatQuery.length) {
-            let f = new Fuse(this.props.data, { keys: ['help', 'title'], threshold: 0.2 });
+            let f = new Fuse(this.props.data, { keys: ['help', 'title', 'cmds'], threshold: 0.2 });
             items = f.search(flatQuery);
         }
 

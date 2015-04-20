@@ -1,17 +1,17 @@
 {
-  "name": "webpack-another",
+  "name": "FirstAidGit",
   "version": "1.0.0",
-  "description": "",
+  "description": "Searchable collection of git frequently asked questions",
   "main": "webpack.config.js",
   "scripts": {
     "start": "webpack-dev-server --hot --progress --colors",
     "build": "webpack --progress --config webpack.dist.config --colors"
   },
-  "author": "",
+  "author": "Ricardo Magalhães",
   "license": "ISC",
   "dependencies": {
     "babel": "^4.7.12",
-    "es6-promise": "^2.0.1",
+    "es6-promise": "^2.1.0",
     "extract-text-webpack-plugin": "^0.3.8",
     "json-loader": "^0.5.1",
     "jsx-loader": "^0.12.2",

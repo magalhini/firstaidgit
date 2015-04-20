@@ -10,6 +10,31 @@
 
     <script src="assets/vendor/Showdown.min.js"></script>
 
+    <style>
+        @media print {
+            .item__instructions {
+                max-height: none!important;
+                opacity: 1!important;
+                color: #333!important;
+            }
+
+            body {
+                color: #333;
+            }
+
+            .c-filterableList__search,
+            .sidebar,
+            .main-navigation,
+            .button {
+                display: none;
+            }
+
+            .c-filterableList .c-filterableList__wrapper {
+                margin-top: 2em;
+            }
+        }
+    </style>
+
     {% if (o.webpack.assetsByChunkName.app[1]) { %}
         <link rel="stylesheet" href="{%=o.htmlWebpackPlugin.options.publicPath%}{%=o.webpack.assetsByChunkName.app[1]%}">
     {% } %}

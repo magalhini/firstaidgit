@@ -47,7 +47,7 @@
     @media #{$breakpoint-medium} {
         background: url("../assets/img/logo@1x.png") no-repeat;
         width: 610px;
-        @include retina("../assets/img/logo@2x.png", 748px, 258px);
+        @include retina("../assets/img/logo@2x.png", 138px, 118px);
     }
 
     @media #{$breakpoint-large} {

@@ -14,6 +14,7 @@ let Home = React.createClass({
         if (this.isMounted()) {
             fetch('./assets/posts.json')
                 .then(function(res) {
+                    res.headers['X-Request-URL'] = res.url;
                     return res.json();
                 }).then(function(json) {
                     self.setState({ data: json });
@@ -45,7 +46,6 @@ let Home = React.createClass({
 
         // It's very bad that the Sidebar component is being injected here.
         // It should live completely separate from this component.
-
         return (
             <section className="main-content">
                 <FilterableList

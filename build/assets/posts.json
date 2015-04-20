@@ -11,7 +11,8 @@
 {
         "title": "Recover a deleted branch",
         "content": "By typing `git reflog`, you can grab the commit hash (SHA1) at the top of your deleted branch. Copy this `sha`, then use: \n\n `git checkout <sha>` \n\n Once you've done that, recover the branch by typing: \n\n `git checkout -b <branchname>`",
-        "help": "recover deleted branch"
+        "help": "recover deleted branch",
+        "cmds": "git reflog"
 },
 {
         "title": "Display the commits that have deleted files",
@@ -40,13 +41,20 @@
 },
 {
         "title": "Remove untracked files and folders",
-        "content": "To remove all untracked files from your working copy: \n\n `git clean -f` \n\n To remove all untracked files and folders: \n\n `git clean -fd`",
-        "help": "remove clear untracked files"
+        "content": "To remove all untracked files from your working copy: \n\n `git clean -f` \n\n To remove all untracked files and folders: \n\n `git clean -fd` \n\n Tip: If you'd like to see first which files will be untracked before actually removing them, you can do a safe clean test by running: \n\n `git clean -n`",
+        "help": "remove clear untracked files",
+        "cmds": "git clean"
 },
 {
         "title": "Undo a commit message before pushing",
         "content": "You can amend your commit message by typing `git commit --amend`, which will open your editor and allow you to make changes to the most recent commit message. \n\n You can also modify the message directly, by using: \n\n `git commit --amend -m \"My new awesome message\"`",
         "help": "undo commit message before pushing amend"
+},
+{
+        "title": "Display commits by author",
+        "content": "You can filter the commit history by author by using: \n\n `git log --author=\"AuthorName\"`",
+        "help": "display show commits by author name",
+        "cmds": "git log author"
 },
 {
         "title": "Search for a specific commit message in all commits",
@@ -69,13 +77,20 @@
         "help": "remove file from git delete"
 },
 {
+        "title": "Compare an old revision of a file",
+        "content": "You can easily view the contents of a file at a specific point in time by using: \n\n `git show commitHash:myFile.txt`",
+        "help": "compare old revision file",
+        "cmds": "git show"
+},
+{
         "title": "Squash feature branch commits to merge into the release branch",
-        "content": "If you decide to merge and squash your commits, this will create a new commit but only in the release branch, therefore the history of the feature branch will remain intact. \n\n Here's an example of how to achieve this: \n\n `git fetch origin` \n\n `git checkout [release-branch]` \n\n `git rebase origin/[release-branch]` \n\n `git merge —squash —no-commit [feature-branch]` \n\n `git commit -m 'Merge X into Y'` \n\n You'll end up with one commit only in your release branch, while keeping the feature history intact.",
-        "help": "squash combine commits feature merge update release"
+        "content": "If you decide to merge and squash your commits, this will create a new commit but only in the release branch, therefore the history of the feature branch will remain intact. \n\n Here's an example on how to achieve this: \n\n `git fetch origin` \n\n `git checkout [release-branch]` \n\n `git rebase origin/[release-branch]` \n\n `git merge —squash —no-commit [feature-branch]` \n\n `git commit -m 'Merge X into Y'` \n\n You'll end up with one commit only in your release branch, while keeping the feature history intact. \n\n [Learn more about feature branches](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow)",
+        "help": "squash combine commits feature merge update release",
+        "cmds": "git squash"
 },
 {
         "title": "Reset to a certain commit in history",
-        "content": "If you don't care about your local changes, you can reset back to one commit back in time by doing a hard reset: \n\n `git reset --hard HEAD~1` \n\n This will set the HEAD back by one commit. You can also do this using the commit hash instead",
+        "content": "If you don't care about your local changes, you can reset back to one commit back in time by doing a hard reset: \n\n `git reset --hard HEAD~1` \n\n This will set the HEAD back by one commit. You can also do this using the commit hash instead.",
         "help": "revert reset commit certain history"
 },
 {
@@ -95,8 +110,9 @@
 },
 {
         "title": "Recover stashed changes",
-        "content": "If you still have your changes stashed, you can apply them onto your branch by using `git stash apply`. You can run `git diff` to compare the differences. To get rid of the stash afterwards run: \n\n `git stash drop` \n\n If you have more than one stash, find the one you need by running: \n\n `git stash list` and applying it by referencing its index: \n\n `git stash@{1}` \n\n [Read more about stashes](http://stackoverflow.com/questions/19003009/git-how-to-recover-stashed-uncommited-changes)",
-        "help": "recover stash changes stashed"
+        "content": "If you still have your changes stashed, you can apply them onto your branch by using `git stash apply`. You can run `git diff` to compare the differences. To get rid of the stash afterwards run: \n\n `git stash drop` \n\n If you have more than one stash, find the one you need by running: \n\n `git stash list` and applying it by referencing its index: \n\n `git stash@{1}` \n\n Keep in mind that this is zero-based (`stash@{0}` is the first one) \n\n [Read more about stashes](http://stackoverflow.com/questions/19003009/git-how-to-recover-stashed-uncommited-changes)",
+        "help": "recover stash stash@ changes stashed",
+        "cmds": "git checkout stash"
 },
 {
         "title": "Rename my local and remote branch",
@@ -105,8 +121,9 @@
 },
 {
         "title": "Undo a commit after pushing it to master",
-        "content": "This will revert one or more commits that you want to erase from the remote branch. You can either specify one by hash: \n\n `git revert b712c3c` \n\n Revert only the second to last commit: \n\n `git revert HEAD^` \n\n Or simply undo the last commit without creating a revert commit: \n\n `git revert -n HEAD`",
-        "help": "undo revert commit pushed after push"
+        "content": "This will revert one or more commits that you want to erase from the remote branch. You can either specify one by hash: \n\n `git revert b712c3c` \n\n Revert only the second to last commit: \n\n `git revert HEAD^` \n\n Or simply undo the last commit without creating a revert commit: \n\n `git revert -n HEAD` \n\n Tip: `HEAD~1` is a shortcut to `HEAD^`, they mean the same thing. [Learn more about git revert](https://www.atlassian.com/git/tutorials/undoing-changes/git-revert)",
+        "help": "undo revert commit pushed after push",
+        "cmds": "git revert"
 },
 {
         "title": "Unstage a file",
