@@ -2,6 +2,8 @@ import React from 'react';
 import FilterableList from './FilterableList';
 import Sidebar from './Sidebar';
 
+require('es6-promise').polyfill();
+
 let Home = React.createClass({
 
     getInitialState() {

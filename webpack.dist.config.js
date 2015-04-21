@@ -60,6 +60,7 @@ var config = {
         }),
         //new webpack.optimize.CommonsChunkPlugin('app', null, false),
         new webpack.NoErrorsPlugin(),
+        new webpack.IgnorePlugin(/vertx/),
         new ExtractTextPlugin('styles.[hash].css', { allChunks: true }),
         new HtmlWebpackPlugin({ template: path.resolve('./', 'index.html') })
     ]
