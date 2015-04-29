@@ -109,7 +109,7 @@
         "help": "create new branch keep changes"
 },
 {
-        "title": "Push locally create branch to remote",
+        "title": "Push locally created branch to remote",
         "content": "If you've created a local branch but now want it to be tracked on the remote you can run: \n\n `git push -u origin my-new-branch-name` \n\n Now everyone can checkout to your branch.",
         "help": "push local branch remote"
 },
