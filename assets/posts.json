@@ -139,4 +139,10 @@
         "title": "Delete remote branch",
         "content": "If you are positive this branch can be deleted, type: \n\n `git push origin --delete branch-name`",
         "help": "delete remote branch"
-}]
+},
+{
+        "title": "Modify a local commit",
+        "content": "If you want to modify a local commit before it was pushed (add files, make more modifications, etc) simply undo the last commit: \n\n `git reset --soft HEAD~1`\n\n or \n\n `git reset --soft HEAD^`\n\n You can now do any modification you would like (add files, modify and stage). To keep the same commit message:\n\n `git commit -i ORIG_HEAD`\n\n You will be prompted with your last commit message."
+        "help": "commit wrong modify local"
+}
+]
