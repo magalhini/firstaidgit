@@ -109,6 +109,11 @@
         "help": "create new branch keep changes"
 },
 {
+        "title": "Push locally create branch to remote",
+        "content": "If you've created a local branch but now want it to be tracked on the remote you can run: \n\n `git push -u origin my-new-branch-name` \n\n Now everyone can checkout to your branch.",
+        "help": "push local branch remote"
+},
+{
         "title": "Recover stashed changes",
         "content": "If you still have your changes stashed, you can apply them onto your branch by using `git stash apply`. You can run `git diff` to compare the differences. To get rid of the stash afterwards run: \n\n `git stash drop` \n\n If you have more than one stash, find the one you need by running: \n\n `git stash list` and applying it by referencing its index: \n\n `git stash@{1}` \n\n Keep in mind that this is zero-based (`stash@{0}` is the first one) \n\n [Read more about stashes](http://stackoverflow.com/questions/19003009/git-how-to-recover-stashed-uncommited-changes)",
         "help": "recover stash stash@ changes stashed",
@@ -139,4 +144,19 @@
         "title": "Delete remote branch",
         "content": "If you are positive this branch can be deleted, type: \n\n `git push origin --delete branch-name`",
         "help": "delete remote branch"
+},
+{        
+        "title": "Show number of commits from each contributor",        
+        "content": "Want to see how many commits everyone in your team has made? \n\n `git shortlog -s -n` \n\n This will order the authors in decending order by number of commits made.",
+        "help": "show number commits"
+},
+{       
+        "title": "Show all the commits to one file",        
+        "content": "Ever wanted to see all the commits made to a single file? \n\n `git log --follow -p -- myfile` \n\n This will show all the commits made to a single file. The `--follow` argument ensures that we can see commits made to that file even if it was under a different file name at the time. \n\n Omit the `-p` to just see the commit messages and not the commit content.",
+        "help": "show all commits file"
+},
+{
+        "title": "Use command alias's in your CLI",
+        "content": "Getting fed up of typing `git status`? Well we can easily alias that command to something slightly quicker to type within git. \n\n `git config --global alias.st status` \n\n Now all we have to type is `git st` \n\n We can take it a step further by aliasing more complicated commands to an alias: \n\n `git config --global alias.logme 'log -p --author=Rob'` \n\n Now we've aliased `git logme` to show all of our commits.",
+        "help": "command alias"
 }]
