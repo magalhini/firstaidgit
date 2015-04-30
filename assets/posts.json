@@ -1,12 +1,12 @@
 [{
         "title": "Merge my local changes with another branch",
         "content": "This can be done while a regular `merge`, and you should *keep your merge history* by making sure to use `--no-ff`, which means _no fast forward_. \n\n Switch to the branch you're merging against, make sure it's up to date, and merge: \n\n `git merge <the-other-branch> --no-ff` \n\n You should get a commit message with the `merge X into Y branch`, and then you can safely push your merge.>",
-        "help": "undo commit after push reset"
+        "help": "modify undo commit after push reset"
 },
 {
         "title": "Undo commit before pushing changes",
-        "content": "If you made a commit that you wish to modify or erase entirely, the git `reset` command can be of help here. \n\n `git reset HEAD~1 # undo last commit, keep the changes` \n\n `git reset --hard HEAD~1 #undo last commit, erase the changes` \n\n Naturally, be careful when using the last option as your local files will be discarded!",
-        "help": "undo commit local before push reset"
+        "content": "If you made a commit that you wish to modify or erase entirely, the git `reset` command can be of help here. \n\n `git reset HEAD~1 # undo last commit, keep the changes` \n\n `git reset --hard HEAD~1 #undo last commit, erase the changes` \n\n Naturally, be careful when using the last option as your local files will be discarded! \n\n To keep the same commit message:\n\n `git commit -i ORIG_HEAD`\n\n You will be prompted with your last commit message. \n\n Tips from [hrbonz](https://github.com/hrbonz) ",
+        "help": "modify undo commit local before push reset"
 },
 {
         "title": "Recover a deleted branch",
