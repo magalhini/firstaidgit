@@ -69,7 +69,8 @@
 {
         "title": "Combine two or more commits",
         "content": "You will need to use an interactive rebase. If you're rebasing against master, start the process by typing `git rebase -i master`. However, if you're not rebasing against a branch, you'll need to rebase against your `HEAD`.\n\n If you want to squash your last 2 commits, you can use: \n\n `git rebase -i HEAD~2`.\n\n You will then be prompted to follow instructions to pick commits. If you wish to combine all your commits with the oldest *first* commit, leave the first line with `pick` and change the letter to `f` on all other commits. Learn more about [rebases](https://github.com/k88hudson/git-flight-rules#i-need-to-combine-commits) ",
-        "help": "combine commits join rebase"
+        "help": "combine commits join rebase",
+        "cmds": "git rebase"
 },
 {
         "title": "Remove a file from git but keep the local file",
@@ -109,6 +110,11 @@
         "help": "create new branch keep changes"
 },
 {
+        "title": "Push locally created branch to remote",
+        "content": "If you've created a local branch but now want it to be tracked on the remote you can run: \n\n `git push -u origin my-new-branch-name` \n\n Now everyone can checkout to your branch.",
+        "help": "push local branch remote"
+},
+{
         "title": "Recover stashed changes",
         "content": "If you still have your changes stashed, you can apply them onto your branch by using `git stash apply`. You can run `git diff` to compare the differences. To get rid of the stash afterwards run: \n\n `git stash drop` \n\n If you have more than one stash, find the one you need by running: \n\n `git stash list` and applying it by referencing its index: \n\n `git stash@{1}` \n\n Keep in mind that this is zero-based (`stash@{0}` is the first one) \n\n [Read more about stashes](http://stackoverflow.com/questions/19003009/git-how-to-recover-stashed-uncommited-changes)",
         "help": "recover stash stash@ changes stashed",
@@ -144,4 +150,20 @@
         "title": "Reset local branch to match remote",
         "content": "Assuming that you have no changes that you want to save, this can be done with two easy commands. \n\n First let's get a fresh fetch of the remote: \n\n `git fetch <remoteBranchName>`. \n\n Then let's tell git that we want to reset our local to the head of our remote branch like so: \n\n `git reset --hard origin/<localBranchName>`. \n\n If you do have a commit that you wish to keep, you should check out a new branch and make a commit before resetting: `git commit -m \"just in case\"` \n\n `git branch my-new-branch-name`",
         "help": "reset local branch to match remote"
+},
+{
+        "title": "Show number of commits from each contributor",
+        "content": "Want to see how many commits everyone in your team has made? \n\n `git shortlog -s -n` \n\n This will order the authors in decending order by number of commits made.",
+        "help": "show number commits"
+},
+{
+        "title": "Show all the commits to one file",
+        "content": "Ever wanted to see all the commits made to a single file? \n\n `git log --follow -p -- myfile` \n\n This will show all the commits made to a single file. The `--follow` argument ensures that we can see commits made to that file even if it was under a different file name at the time. \n\n Omit the `-p` to just see the commit messages and not the commit content.",
+        "help": "show all commits file",
+        "cmds": "git log follow"
+},
+{
+        "title": "Use command alias's in your CLI",
+        "content": "Getting fed up of typing `git status`? Well we can easily alias that command to something slightly quicker to type within git. \n\n `git config --global alias.st status` \n\n Now all we have to type is `git st` \n\n We can take it a step further by aliasing more complicated commands to an alias: \n\n `git config --global alias.logme 'log -p --author=Rob'` \n\n Now we've aliased `git logme` to show all of our commits.",
+        "help": "command alias"
 }]
