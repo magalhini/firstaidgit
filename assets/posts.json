@@ -172,4 +172,34 @@
     "content": "To mark a file (or several) conflicted files as resolved so you can push the changes up, normally add these files: \n\n `git add <file>` \n\n You can then type `git commit` to solve these conflicts and push the changes up. \n\n Suggested by Robert Wünsch.",
     "help": "conflict mark resolve file",
     "cmds": "git add"
+},
+{
+    "title": "Clone a repository without getting the entire history",
+    "content": "You're looking for a shallow clone. This will only fetch the latest history and not all the objects in the repository, which might take a long time while not necessary. \n\n `git clone <repository URL> --depth 1` \n\n The `depth` parameter allows you to specify how deep you want to go: \n\n `git clone <repository URL> --depth 5`",
+    "cmds": "git clone",
+    "help": "clone shallow depth"
+},
+{
+    "title": "Add a remote repository",
+    "content": "Before you can push to a remote, you first need to add one. When you clone a repository, git will automatically add the URL you cloned from as the `origin` remote. To add one yourself, use: \n\n `git remote add <remote eame> <repository URL>` \n\n For example: \n\n `git remote add upstream https://github.com/magalhini/firstaidgit.git`",
+    "help": "remote add origin",
+    "cmds": "git remote add"
+},
+{
+    "title": "List all remotes",
+    "content": "To list all remotes: \n\n `git remote` \n\n This will only show the names of the remotes. To view more information, use `git remote show`.",
+    "help": "remote remotes list all",
+    "cmds": "git remote"
+},
+{
+    "title": "Show information about a remote",
+    "content": "To show information about a remote, such as fetch and push URLs, tracked branches and HEAD, use: \n\n `git remote show origin` \n\n Where `origin` is your remote.",
+    "help": "remote show information",
+    "cmds": "git remote show"
+},
+{
+    "title": "Delete a remote",
+    "content": "To remove a remote, use: \n\n `git remote rm origin` \n\n Where `origin` is your remote. Note that this will not delete the remote repository, only the link from your local repository to the remote repository.",
+    "help": "remote remove rm delete",
+    "cmds": "git remote rm"
 }]
