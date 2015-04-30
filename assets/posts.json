@@ -166,4 +166,10 @@
         "title": "Use command alias's in your CLI",
         "content": "Getting fed up of typing `git status`? Well we can easily alias that command to something slightly quicker to type within git. \n\n `git config --global alias.st status` \n\n Now all we have to type is `git st` \n\n We can take it a step further by aliasing more complicated commands to an alias: \n\n `git config --global alias.logme 'log -p --author=Rob'` \n\n Now we've aliased `git logme` to show all of our commits.",
         "help": "command alias"
+},
+{
+    "title": "Mark a conflict file as resvoled",
+    "content": "To mark a file (or several) conflicted files as resolved so you can push the changes up, normally add these files: \n\n `git add <file>` \n\n You can then type `git commit` to solve these conflicts and push the changes up. \n\n Suggested by Robert Wünsch.",
+    "help": "conflict mark resolve file",
+    "cmds": "git add"
 }]
