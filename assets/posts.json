@@ -168,7 +168,7 @@
         "help": "command alias"
 },
 {
-    "title": "Mark a conflict file as resvoled",
+    "title": "Mark a conflict file as resolved",
     "content": "To mark a file (or several) conflicted files as resolved so you can push the changes up, normally add these files: \n\n `git add <file>` \n\n You can then type `git commit` to solve these conflicts and push the changes up. \n\n Suggested by Robert Wünsch.",
     "help": "conflict mark resolve file",
     "cmds": "git add"
