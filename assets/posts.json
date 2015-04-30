@@ -139,4 +139,9 @@
         "title": "Delete remote branch",
         "content": "If you are positive this branch can be deleted, type: \n\n `git push origin --delete branch-name`",
         "help": "delete remote branch"
+},
+{
+        "title": "Reset local branch to match remote",
+        "content": "Assuming that you have no changes that you want to save, this can be done with two easy commands. \n\n First let's get a fresh fetch of the remote: \n\n `git fetch <remoteBranchName>`. \n\n Then let's tell git that we want to reset our local to the head of our remote branch like so: \n\n `git reset --hard origin/<localBranchName>`. \n\n If you do have a commit that you wish to keep, you should check out a new branch and make a commit before resetting: `git commit -m \"just in case\"` \n\n `git branch my-new-branch-name`",
+        "help": "reset local branch to match remote"
 }]
