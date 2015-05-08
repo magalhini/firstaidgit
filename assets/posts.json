@@ -168,8 +168,14 @@
         "help": "command alias"
 },
 {
-    "title": "Mark a conflict file as resolved",
-    "content": "To mark a file (or several) conflicted files as resolved so you can push the changes up, normally add these files: \n\n `git add <file>` \n\n You can then type `git commit` to solve these conflicts and push the changes up. \n\n Suggested by Robert Wünsch.",
-    "help": "conflict mark resolve file",
-    "cmds": "git add"
+        "title": "Mark a conflict file as resolved",
+        "content": "To mark a file (or several) conflicted files as resolved so you can push the changes up, normally add these files: \n\n `git add <file>` \n\n You can then type `git commit` to solve these conflicts and push the changes up. \n\n Suggested by Robert Wünsch.",
+        "help": "conflict mark resolve file",
+        "cmds": "git add"
+},
+{
+        "title": "Update a specific submodule",
+        "content": "To update a specific submodule in your repository, you should to append the path to your submodule: \n\n `git submodule update --remote --merge <path>` \n\n Suggested by Wouter Peschier.",
+        "help": "update submodule",
+        "cmds": "git submodule remote merge"
 }]
