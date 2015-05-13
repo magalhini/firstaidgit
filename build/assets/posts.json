@@ -172,9 +172,25 @@
     "content": "To mark a file (or several) conflicted files as resolved so you can push the changes up, normally add these files: \n\n `git add <file>` \n\n You can then type `git commit` to solve these conflicts and push the changes up. \n\n Suggested by Robert Wünsch.",
     "help": "conflict mark resolve file",
     "cmds": "git add"
-}, {
+},{
     "title": "Display all unpushed commits",
     "content": "To view all the commits that are yet to be pushed to all branches, use the following command: \n\n `git log --branches --not --remotes` \n\n Alternatively, you can also use: \n\n `git log origin/master..HEAD`",
     "help": "display show unpushed commits",
     "cmds": "git log"
+},{
+    "title": "Rename a git tag",
+    "content": "To rename an existing tag: \n\n `git tag <newTag> <oldTag>` \n\n `git tag -d <oldTag>` \n\n `git push origin :refs/tags/<oldTag>` \n\n `git push --tags`",
+    "help": "rename tag name change",
+    "cmds": "git tag"
+},{
+    "title": "Remove old remote git branches",
+    "content": "If a branch is removed on the remote, you can delete it from the local refs by using the `git-remote prune <name>` feature. \n\n This will delete the stale remote-tracking branch under <name>, where the stale branch has already been removed from the remote repository referenced by <name>, but are still locally available in `remotes/<name>`.",
+    "help": "remove old prune branch",
+    "cmds": "git remote prune <remote>"
+},
+{
+    "title": "Update a specific submodule",
+    "content": "To update a specific submodule in your repository, you should append the path to your submodule: \n\n `git submodule update --remote --merge <path>` \n\n Suggested by Wouter Peschier.",
+    "help": "update submodule",
+    "cmds": "git submodule remote merge"
 }]
