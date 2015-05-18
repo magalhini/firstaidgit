@@ -193,4 +193,10 @@
     "content": "To update a specific submodule in your repository, you should append the path to your submodule: \n\n `git submodule update --remote --merge <path>` \n\n Suggested by Wouter Peschier.",
     "help": "update submodule",
     "cmds": "git submodule remote merge"
+},
+{
+    "title": "Stage deleted files",
+    "content": "To stage for commit files or folders that you have deleted locally, you can use: \n\n `git add -u` \n\n If you only want to stage the current path you're in, use: \n\n `git add -u .`",
+    "help": "stage commit deleted files folders",
+    "cmds": "git add -u"
 }]
