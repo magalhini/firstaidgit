@@ -14,9 +14,9 @@ let Footer = React.createClass({
                         <h3>More resources</h3>
                         <ul>
                             <li><a href="https://github.com/k88hudson/git-flight-rules">Git Flight Rules</a></li>
-                            <li><a href="http://git-scm.com/documentation">Git Documenation</a></li>
+                            <li><a href="http://git-scm.com/documentation">Git Documentation</a></li>
                             <li><a href="http://git-scm.com/book/en/v2/Getting-Started-Git-Basics">Git Basics</a></li>
-                            <li><a href="https://try.github.io/levels/1/challenges/1">Github School</a></li>
+                            <li><a href="https://try.github.io/levels/1/challenges/1">GitHub School</a></li>
                         </ul>
                     </div>
                     <div className="column-3">
