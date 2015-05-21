@@ -12,7 +12,7 @@ let About = React.createClass({
                         useful out of it, so I began to collect a few posts about the most frequently asked questions about git issues.</p>
 
                     <p className="section-copy">The motivation behind it was to have an easy and quick way to
-                    search through the most common git relate issues when they arise, as I find myself having
+                    search through the most common git-related issues when they arise, as I find myself having
                     dozens of Stackoverflow bookmarks scattered everywhere for these issues.</p>
                     </div>
 
