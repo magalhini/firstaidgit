@@ -116,7 +116,7 @@
 },
 {
         "title": "Recover stashed changes",
-        "content": "If you still have your changes stashed, you can apply them onto your branch by using `git stash apply`. You can run `git diff` to compare the differences. To get rid of the stash afterwards run: \n\n `git stash drop` \n\n If you have more than one stash, find the one you need by running: \n\n `git stash list` and applying it by referencing its index: \n\n `git stash@{1}` \n\n Keep in mind that this is zero-based (`stash@{0}` is the first one) \n\n [Read more about stashes](http://stackoverflow.com/questions/19003009/git-how-to-recover-stashed-uncommited-changes)",
+        "content": "If you still have your changes stashed, you can apply them onto your branch by using `git stash apply`. You can run `git diff` to compare the differences. To get rid of the stash afterwards run: \n\n `git stash drop` \n\n If you have more than one stash, find the one you need by running: \n\n `git stash list` and applying it by referencing its index: \n\n `git stash@{1}` \n\n Keep in mind that this is zero-based (`stash@{0}` is the first one) \n\n [Read more about stashes](http://stackoverflow.com/q/19003009)",
         "help": "recover stash stash@ changes stashed",
         "cmds": "git checkout stash"
 },
@@ -137,8 +137,8 @@
         "help": "unstage file from remove commit"
 },
 {
-        "title": "Commited to the wrong branch",
-        "content": "Start by switching to the new branch you forgot to create, by typing \n\n `git checkout -b <new-branch>`. \n\n Switch back to the original branch now: \n\n `git checkout <original-branch>` \n\n ...and reset to the last commit you want to keep. \n\n To do so, you can type `git log` and save the hash (SHA1) of the last commit that you want to keep. Let's say this is `a31a45c`. \n\n Now you have to reset it: `git reset --hard a31a45c` and push this last forced reset. \n\n **Warning:** Make sure no one has commited to that original branch in the meantime, or changes might be lost!",
+        "title": "Committed to the wrong branch",
+        "content": "Start by switching to the new branch you forgot to create, by typing \n\n `git checkout -b <new-branch>`. \n\n Switch back to the original branch now: \n\n `git checkout <original-branch>` \n\n ...and reset to the last commit you want to keep. \n\n To do so, you can type `git log` and save the hash (SHA1) of the last commit that you want to keep. Let's say this is `a31a45c`. \n\n Now you have to reset it: `git reset --hard a31a45c` and push this last forced reset. \n\n **Warning:** Make sure no one has committed to that original branch in the meantime, or changes might be lost!",
         "help": "commit wrong branch master accident"
 },
 {
