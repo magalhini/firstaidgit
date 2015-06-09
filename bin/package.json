@@ -1,0 +1,19 @@
+{
+  "name": "firstaidgit",
+  "version": "0.0.1",
+  "description": "Search git problems and their solutions via the CLI.",
+  "author": "Ricardo Magalhaes",
+  "engines": {
+    "node": ">=0.10"
+  },
+  "dependencies": {
+    "chalk": "^1.0.0",
+    "commander": "^2.8.1",
+    "fuzzy": "^0.1.0",
+    "request": "^2.57.0",
+    "request-json": "^0.5.3"
+  },
+  "bin": {
+    "firstaidgit": "firstaidgit.js"
+  }
+}
