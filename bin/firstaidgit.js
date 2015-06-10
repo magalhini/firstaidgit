@@ -22,14 +22,12 @@ if (!program.args.length) {
 var client = requestJson.createClient('http://localhost:8888/');
 
 client.get(url, function(err, res, body) {
-    var options = {
-        extract: function(el) {return el.title && el.help; }
-    };
-
-    if (q.length) {
+    if (res.statusCode === 200) {
         q = q.join(' ');
 
-        var results = fuzzy.filter(q.toString(), body, options);
+        var fuzzyOptions = { extract: function(el) {return el.title && el.help; } };
+
+        var results = fuzzy.filter(q.toString(), body, fuzzyOptions);
         var matches = results.map(function(el, i, o) {
             return el;
         });
@@ -39,12 +37,15 @@ client.get(url, function(err, res, body) {
             return false;
         }
 
-        log(chalk.dim(matches.length + ' results found:'));
+        log(chalk.dim((matches.length === 1 ? '1 result' : matches.length + ' results') + ' found:'));
 
         matches.forEach(function(el) {
             var formatted = el.original.content.replace(/`/gi, '');
             log(chalk.cyan('>>>> ') + chalk.yellow.bold(el.original.title));
             log(chalk.green(formatted) + '\n\n');
         });
+    } else if (err) {
+        log('An error, damn!' + err);
+        process.exit(1);
     }
 });
