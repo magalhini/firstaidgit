@@ -122,7 +122,7 @@
 },
 {
         "title": "Rename my local and remote branch",
-        "content": "Let’s say you have a _“fix-bug25”_ branch, and you want to rename it to _“hotfix-users”_. First, change the local branch: \n\n `git branch -m fix-bug25 hotfix-users` \n\n Now, the remote branch: you can’t rename the branch directly, so you’ll need to delete it and push it again with the new name. Make sure no one else within your team is working on it! Delete the branch: `git push origin :fix-bug25` \n\n And now let's push the new one: `git push origin hotfix-users`",
+        "content": "Let’s say you have a _“fix-bug25”_ branch, and you want to rename it to _“hotfix-users”_. First, change the local branch: \n\n `git branch -m fix-bug25 hotfix-users` \n\n Now, the remote branch: you can’t rename the branch directly, so you’ll need to delete it and push it again with the new name. Make sure no one else within your team is working on it! Delete the branch: `git push origin --delete fix-bug25` \n\n And now let's push the new one: `git push origin hotfix-users`",
         "help": "rename wrong name branch"
 },
 {
