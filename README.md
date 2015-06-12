@@ -17,6 +17,18 @@ Make sure to have gulp installed and run:
 
 To generate a deployable version.
 
+## Using the CLI
+
+There's an experimental CLI for First Aid Git!
+
+You can install it via npm by doing:
+
+`npm install -g firstaidgit`
+
+And use by running `firstaidgit your search` from your terminal.
+
+![example](http://g.recordit.co/UTxbJhNv5s.gif)
+
 ## Notes
 
 Please note that this project needs a lot of fixes as far as best practices go.
@@ -25,4 +37,4 @@ so feel free to contribute if you'd like to make any changes to it.
 
 ## Contributing with git answers
 
-All answers live in `assets/posts.json`. 
+All answers live in `assets/posts.json`.
