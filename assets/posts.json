@@ -32,7 +32,7 @@
 {
         "title": "Discard local file changes",
         "content": "The easiest way to get rid of unwanted changes is by resetting a file or a folder to the current commit state. To do so, you can use \n\n `git checkout myFile.txt` \n\n You can also reset a specific path instead: \n\n `git checkout -- myPath`",
-        "help": "revert reset file specific version"
+        "help": "revert changes reset file specific version"
 },
 {
         "title": "Clear all stashed states",
