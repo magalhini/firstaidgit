@@ -5,7 +5,7 @@
 },
 {
         "title": "Undo commit before pushing changes",
-        "content": "If you made a commit that you wish to modify or erase entirely, the git `reset` command can be of help here. \n\n `git reset HEAD~1 # undo last commit, keep the changes` \n\n `git reset --hard HEAD~1 #undo last commit, erase the changes` \n\n Naturally, be careful when using the last option as your local files will be discarded! \n\n To keep the same commit message:\n\n `git commit -i ORIG_HEAD`\n\n You will be prompted with your last commit message. \n\n Tips from [hrbonz](https://github.com/hrbonz) ",
+        "content": "If you made a commit that you wish to modify or erase entirely, the git `reset` command can be of help here. \n\n `git reset HEAD~1 # undo last commit, keep the changes` \n\n `git reset --hard HEAD~1 #undo last commit, erase the changes` \n\n Naturally, be careful when using the last option as your local files will be discarded! \n\n To keep the same commit message:\n\n `git commit -a -c ORIG_HEAD`\n\n You will be prompted with your last commit message. \n\n Tips from [hrbonz](https://github.com/hrbonz) ",
         "help": "modify undo commit local before push reset"
 },
 {
