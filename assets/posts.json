@@ -211,4 +211,10 @@
     "content": "To view a list of all tracked and untracked remote branches, use: \n\n `git remote show origin`",
     "help": "show branches remote display",
     "cmds": "git add -u"
+},
+{
+    "title": "List all files changed in a commit",
+    "content": "To view just the file names, use: \n\n `git show --name-only SHA1`\n\nAlso view the status:\n\n `git show --name-status SHA1`",
+    "help": "show branches remote display",
+    "cmds": "git show"
 }]
