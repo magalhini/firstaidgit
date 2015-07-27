@@ -194,8 +194,8 @@
 }
 
 .c-filterableList code {
-    padding: 0 .5em;
     color: $codeColor;
+    padding: 0 .5em;
 
     @media all and (min-width: 40em) { font-size: 1.3em; }
 }
@@ -204,7 +204,7 @@
     margin-bottom: 2em;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: rgba(255,255,255, .7);
+    color: rgba(255, 255, 255, .7);
 }
 
 // Filterable Component Items
@@ -224,9 +224,9 @@
     transition: all .1s ease-in-out;
 
     .icon-arrow {
+        opacity: .4;
         position: absolute;
         right: 0;
-        opacity: .4;
         transition: all .15s ease-in-out;
 
         svg {height: 1.2em;}
@@ -244,8 +244,8 @@
 
     &.is-open + .item__instructions {
         max-height: 40em;
-        top: -1em;
         opacity: 1;
+        top: -1em;
     }
 
     &:hover,
@@ -319,6 +319,6 @@
 
 .error-state {
     font-size: 2em;
-    text-align: center;
     padding: 2em;
+    text-align: center;
 }

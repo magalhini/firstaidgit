@@ -1,7 +1,6 @@
 import React from 'react/addons';
 import Fuse from './../../assets/vendor/fuse.js';
 import markdown from 'markdown';
-import isvg from 'react-inlinesvg';
 import SVGIcon from './../utils/SVG';
 
 var md = markdown.markdown;

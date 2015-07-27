@@ -5,7 +5,7 @@
 },
 {
         "title": "Undo commit before pushing changes",
-        "content": "If you made a commit that you wish to modify or erase entirely, the git `reset` command can be of help here. \n\n `git reset HEAD~1 # undo last commit, keep the changes` \n\n `git reset --hard HEAD~1 #undo last commit, erase the changes` \n\n Naturally, be careful when using the last option as your local files will be discarded! \n\n To keep the same commit message:\n\n `git commit -i ORIG_HEAD`\n\n You will be prompted with your last commit message. \n\n Tips from [hrbonz](https://github.com/hrbonz) ",
+        "content": "If you made a commit that you wish to modify or erase entirely, the git `reset` command can be of help here. \n\n `git reset HEAD~1 # undo last commit, keep the changes` \n\n `git reset --hard HEAD~1 #undo last commit, erase the changes` \n\n Naturally, be careful when using the last option as your local files will be discarded! \n\n To keep the same commit message:\n\n `git commit -a -c ORIG_HEAD`\n\n You will be prompted with your last commit message. \n\n Tips from [hrbonz](https://github.com/hrbonz) ",
         "help": "modify undo commit local before push reset"
 },
 {
@@ -32,7 +32,7 @@
 {
         "title": "Discard local file changes",
         "content": "The easiest way to get rid of unwanted changes is by resetting a file or a folder to the current commit state. To do so, you can use \n\n `git checkout myFile.txt` \n\n You can also reset a specific path instead: \n\n `git checkout -- myPath`",
-        "help": "revert reset file specific version"
+        "help": "revert changes reset file specific version"
 },
 {
         "title": "Clear all stashed states",
@@ -105,7 +105,7 @@
         "help": "recover undo deleted tag accident"
 },
 {
-        "title": "Create a new branch with the changes on the current one",
+        "title": "Move uncommited changes to a new branch",
         "content": "Too often we start changing files on a branch to fix something, only then realising we didn't create a new branch before. Luckily, this is as simple as creating a new branch: \n\n `git checkout -b my-new-branch-name` \n\n This will bring any files from your current branch into the new one, which you can commit then.",
         "help": "create new branch keep changes"
 },
@@ -122,7 +122,7 @@
 },
 {
         "title": "Rename my local and remote branch",
-        "content": "Let’s say you have a _“fix-bug25”_ branch, and you want to rename it to _“hotfix-users”_. First, change the local branch: \n\n `git branch -m fix-bug25 hotfix-users` \n\n Now, the remote branch: you can’t rename the branch directly, so you’ll need to delete it and push it again with the new name. Make sure no one else within your team is working on it! Delete the branch: `git push origin :fix-bug25` \n\n And now let's push the new one: `git push origin hotfix-users`",
+        "content": "Let’s say you have a _“fix-bug25”_ branch, and you want to rename it to _“hotfix-users”_. First, change the local branch: \n\n `git branch -m fix-bug25 hotfix-users` \n\n Now, the remote branch: you can’t rename the branch directly, so you’ll need to delete it and push it again with the new name. Make sure no one else within your team is working on it! Delete the branch: `git push origin --delete fix-bug25` \n\n And now let's push the new one: `git push origin hotfix-users`",
         "help": "rename wrong name branch"
 },
 {
@@ -199,4 +199,28 @@
     "content": "To stage for commit files or folders that you have deleted locally, you can use: \n\n `git add -u` \n\n If you only want to stage the current path you're in, use: \n\n `git add -u .`",
     "help": "stage commit deleted files folders",
     "cmds": "git add -u"
+},
+{
+    "title": "Move recent commits to a new branch",
+    "content": "Say you want to move the last 2 commits into a new, separate branch. You can do this by creating the branch, rolling back 2 commits and checking out the branch. So: \n\n `git branch <branch-name>` \n\n `git reset --hard HEAD~2 # this rolls back 2 commits` \n\n `git checkout <branch-name>` \n\n Note that by HARD resetting you will lose any uncommited work. So make sure that everything is committed!",
+    "help": "move recent commits to new branch last",
+    "cmds": "git reset branch"
+},
+{
+    "title": "Show all remote branches",
+    "content": "To view a list of all tracked and untracked remote branches, use: \n\n `git remote show origin`",
+    "help": "show branches remote display",
+    "cmds": "git add -u"
+},
+{
+    "title": "List all files changed in a commit",
+    "content": "To view just the file names, use: \n\n `git show --name-only SHA1`\n\nAlso view the status:\n\n `git show --name-status SHA1`",
+    "help": "show branches remote display",
+    "cmds": "git show"
+},
+{
+    "title": "Checkout a file from a different branch",
+    "content": "You can checkout a single file from a different branch without switching to it. Use: \n\n `git checkout <branch_name> --<file_path>`",
+    "help": "checkout file different branch",
+    "cmds": "git checkout"
 }]
