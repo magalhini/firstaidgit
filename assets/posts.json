@@ -138,7 +138,7 @@
 },
 {
         "title": "Committed to the wrong branch",
-        "content": "Start by switching to the new branch you forgot to create, by typing \n\n `git checkout -b <new-branch>`. \n\n Switch back to the original branch now: \n\n `git checkout <original-branch>` \n\n ...and reset to the last commit you want to keep. \n\n To do so, you can type `git log` and save the hash (SHA1) of the last commit that you want to keep. Let's say this is `a31a45c`. \n\n Now you have to reset it: `git reset --hard a31a45c` and push this last forced reset. \n\n **Warning:** Make sure no one has committed to that original branch in the meantime, or changes might be lost!",
+        "content": "Create the new branch you forgot to create, by typing \n\n `git branch <new-branch>` \n\n ...and reset the current branch to the last commit you want to keep. \n\n To do so, you can type `git log` and save the hash (SHA1) of the last commit that you want to keep. Let's say this is `a31a45c`. \n\n Now you have to reset it: `git reset --hard a31a45c` and push this last forced reset. \n\n **Warning:** Make sure no one has committed to that original branch in the meantime, or changes might be lost!",
         "help": "commit wrong branch master accident"
 },
 {
