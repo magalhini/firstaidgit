@@ -223,4 +223,10 @@
     "content": "You can checkout a single file from a different branch without switching to it. Use: \n\n `git checkout <branch_name> --<file_path>`",
     "help": "checkout file different branch",
     "cmds": "git checkout"
+},
+{
+    "title": "Show contents of a file at a specific commit",
+    "content": "You can get a file’s contents out from a specific commit. Use: \n\n `git show <treeish>:<file>` \n\n  \n\n [Source](http://gitready.com/intermediate/2009/02/27/get-a-file-from-a-specific-revision.html)",
+    "help": "Show contents of a file at a particular commit",
+    "cmds": "git show"
 }]
