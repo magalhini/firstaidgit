@@ -47,6 +47,7 @@ var config = {
             },
             { test: /\.jsx?$/, loaders: ['react-hot', 'babel'], exclude: /node_modules/ },
             { test: /\.(jpg|png|gif)$/, loader: 'file' },
+            { test: /\.(scss)$/, loader: 'sass' },
             { test: /\.json$/, loader: 'json' },
             { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: 'file' }
         ]
