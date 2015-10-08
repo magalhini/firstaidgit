@@ -38,8 +38,8 @@
         }
     </style>
 
-    {% if (o.webpack.assetsByChunkName.app[1]) { %}
-        <link rel="stylesheet" href="{%=o.htmlWebpackPlugin.options.publicPath%}{%=o.webpack.assetsByChunkName.app[1]%}">
+    {% for (var css in o.htmlWebpackPlugin.files.css) { %}
+        <link href="{%=o.htmlWebpackPlugin.files.css[css] %}" rel="stylesheet">
     {% } %}
     </head>
 
@@ -51,8 +51,8 @@
         <script src="{%=o.htmlWebpackPlugin.options.webpackDevServer%}"></script>
         {% } %}
 
-        {% for (var chunk in o.htmlWebpackPlugin.assets) { %}
-        <script src="{%=o.htmlWebpackPlugin.assets[chunk]%}"></script>
+        {% for (var chunk in o.htmlWebpackPlugin.files.chunks) { %}
+        <script src="{%=o.htmlWebpackPlugin.files.chunks[chunk].entry %}"></script>
         {% } %}
 
         <script src="//use.typekit.net/zwl0ckj.js"></script>
