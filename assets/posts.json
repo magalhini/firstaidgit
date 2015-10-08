@@ -1,171 +1,171 @@
 [{
-        "title": "Merge my local changes with another branch",
-        "content": "This can be done while a regular `merge`, and you should *keep your merge history* by making sure to use `--no-ff`, which means _no fast forward_. \n\n Switch to the branch you're merging against, make sure it's up to date, and merge: \n\n `git merge <the-other-branch> --no-ff` \n\n You should get a commit message with the `merge X into Y branch`, and then you can safely push your merge.>",
-        "help": "modify undo commit after push reset"
+    "title": "Merge my local changes with another branch",
+    "content": "This can be done while a regular `merge`, and you should *keep your merge history* by making sure to use `--no-ff`, which means _no fast forward_. \n\n Switch to the branch you're merging against, make sure it's up to date, and merge: \n\n `git merge <the-other-branch> --no-ff` \n\n You should get a commit message with the `merge X into Y branch`, and then you can safely push your merge.>",
+    "help": "modify undo commit after push reset"
 },
 {
-        "title": "Undo commit before pushing changes",
-        "content": "If you made a commit that you wish to modify or erase entirely, the git `reset` command can be of help here. \n\n `git reset HEAD~1 # undo last commit, keep the changes` \n\n `git reset --hard HEAD~1 #undo last commit, erase the changes` \n\n Naturally, be careful when using the last option as your local files will be discarded! \n\n To keep the same commit message:\n\n `git commit -a -c ORIG_HEAD`\n\n You will be prompted with your last commit message. \n\n Tips from [hrbonz](https://github.com/hrbonz) ",
-        "help": "modify undo commit local before push reset"
+    "title": "Undo commit before pushing changes",
+    "content": "If you made a commit that you wish to modify or erase entirely, the git `reset` command can be of help here. \n\n `git reset HEAD~1 # undo last commit, keep the changes` \n\n `git reset --hard HEAD~1 #undo last commit, erase the changes` \n\n Naturally, be careful when using the last option as your local files will be discarded! \n\n To keep the same commit message:\n\n `git commit -a -c ORIG_HEAD`\n\n You will be prompted with your last commit message. \n\n Tips from [hrbonz](https://github.com/hrbonz) ",
+    "help": "modify undo commit local before push reset"
 },
 {
-        "title": "Recover a deleted branch",
-        "content": "By typing `git reflog`, you can grab the commit hash (SHA1) at the top of your deleted branch. Copy this `sha`, then use: \n\n `git checkout <sha>` \n\n Once you've done that, recover the branch by typing: \n\n `git checkout -b <branchname>`",
-        "help": "recover deleted branch",
-        "cmds": "git reflog"
+    "title": "Recover a deleted branch",
+    "content": "By typing `git reflog`, you can grab the commit hash (SHA1) at the top of your deleted branch. Copy this `sha`, then use: \n\n `git checkout <sha>` \n\n Once you've done that, recover the branch by typing: \n\n `git checkout -b <branchname>`",
+    "help": "recover deleted branch",
+    "cmds": "git reflog"
 },
 {
-        "title": "Display the commits that have deleted files",
-        "content": "You can quickly check which commits included deleted files by using the following command: \n\n `git log --diff-filter=D --summary` \n\n This will show you the commits in which files were removed.",
-        "help": "display show deleted files history"
+    "title": "Display the commits that have deleted files",
+    "content": "You can quickly check which commits included deleted files by using the following command: \n\n `git log --diff-filter=D --summary` \n\n This will show you the commits in which files were removed.",
+    "help": "display show deleted files history"
 },
 {
-        "title": "Rebase my branch with master",
-        "content": "To catch-up with the latest changes from master (or any other branch you started from), you can and should rebase against it. Say you're working on the `foobar` branch: \n\n `git checkout foobar` \n\n Followed by a rebase: \n\n `git rebase master` \n\n This applies the `origin` commits on top of master. When you're done with solving conflicts, continue by using `git rebase --continue`. At this point you can continue to work on your branch or merge it against master. \n\n Learn more about [rebases](https://github.com/k88hudson/git-flight-rules#i-need-to-combine-commits)",
-        "help": "rebase branch against master changes"
+    "title": "Rebase my branch with master",
+    "content": "To catch-up with the latest changes from master (or any other branch you started from), you can and should rebase against it. Say you're working on the `foobar` branch: \n\n `git checkout foobar` \n\n Followed by a rebase: \n\n `git rebase master` \n\n This applies the `origin` commits on top of master. When you're done with solving conflicts, continue by using `git rebase --continue`. At this point you can continue to work on your branch or merge it against master. \n\n Learn more about [rebases](https://github.com/k88hudson/git-flight-rules#i-need-to-combine-commits)",
+    "help": "rebase branch against master changes"
 },
 {
-        "title": "Restore a deleted file",
-        "content": "If you deleted a file by accident, you can get it back by checking it out again: \n\n `git checkout myFile.txt` \n\n If you need to restore a file from a certain point in time in your commit history, grab the hash of that commit and run: \n\n `git checkout $commit~1 myFile.txt`",
-        "help": "restore recover deleted file"
+    "title": "Restore a deleted file",
+    "content": "If you deleted a file by accident, you can get it back by checking it out again: \n\n `git checkout myFile.txt` \n\n If you need to restore a file from a certain point in time in your commit history, grab the hash of that commit and run: \n\n `git checkout $commit~1 myFile.txt`",
+    "help": "restore recover deleted file"
 },
 {
-        "title": "Discard local file changes",
-        "content": "The easiest way to get rid of unwanted changes is by resetting a file or a folder to the current commit state. To do so, you can use \n\n `git checkout myFile.txt` \n\n You can also reset a specific path instead: \n\n `git checkout -- myPath`",
-        "help": "revert changes reset file specific version"
+    "title": "Discard local file changes",
+    "content": "The easiest way to get rid of unwanted changes is by resetting a file or a folder to the current commit state. To do so, you can use \n\n `git checkout myFile.txt` \n\n You can also reset a specific path instead: \n\n `git checkout -- myPath`",
+    "help": "revert changes reset file specific version"
 },
 {
-        "title": "Clear all stashed states",
-        "content": "You can clear all stashed states by using: \n\n `git stash clear`",
-        "help": "clear stash"
+    "title": "Clear all stashed states",
+    "content": "You can clear all stashed states by using: \n\n `git stash clear`",
+    "help": "clear stash"
 },
 {
-        "title": "Remove untracked files and folders",
-        "content": "To remove all untracked files from your working copy: \n\n `git clean -f` \n\n To remove all untracked files and folders: \n\n `git clean -fd` \n\n Tip: If you'd like to see first which files will be untracked before actually removing them, you can do a safe clean test by running: \n\n `git clean -n`",
-        "help": "remove clear untracked files",
-        "cmds": "git clean"
+    "title": "Remove untracked files and folders",
+    "content": "To remove all untracked files from your working copy: \n\n `git clean -f` \n\n To remove all untracked files and folders: \n\n `git clean -fd` \n\n Tip: If you'd like to see first which files will be untracked before actually removing them, you can do a safe clean test by running: \n\n `git clean -n`",
+    "help": "remove clear untracked files",
+    "cmds": "git clean"
 },
 {
-        "title": "Undo a commit message before pushing",
-        "content": "You can amend your commit message by typing `git commit --amend`, which will open your editor and allow you to make changes to the most recent commit message. \n\n You can also modify the message directly, by using: \n\n `git commit --amend -m \"My new awesome message\"`",
-        "help": "undo commit message before pushing amend"
+    "title": "Undo a commit message before pushing",
+    "content": "You can amend your commit message by typing `git commit --amend`, which will open your editor and allow you to make changes to the most recent commit message. \n\n You can also modify the message directly, by using: \n\n `git commit --amend -m \"My new awesome message\"`",
+    "help": "undo commit message before pushing amend"
 },
 {
-        "title": "Display commits by author",
-        "content": "You can filter the commit history by author by using: \n\n `git log --author=\"AuthorName\"`",
-        "help": "display show commits by author name",
-        "cmds": "git log author"
+    "title": "Display commits by author",
+    "content": "You can filter the commit history by author by using: \n\n `git log --author=\"AuthorName\"`",
+    "help": "display show commits by author name",
+    "cmds": "git log author"
 },
 {
-        "title": "Search for a specific commit message in all commits",
-        "content": "You can search for a specific commit log by matching it on a regular expression. Use: \n\n `git log --grep <your-query>`",
-        "help": "search commit message regexp log find"
+    "title": "Search for a specific commit message in all commits",
+    "content": "You can search for a specific commit log by matching it on a regular expression. Use: \n\n `git log --grep <your-query>`",
+    "help": "search commit message regexp log find"
 },
 {
-        "title": "Undo a commit message after pushing",
-        "content": "This is a two-step process. You need to amend your commit message by using `git commit --amend`, and then you re-write your branch commit history by force pushing the commit: `git push <remote> <branch> --force` \n\n **Warning:** by force pushing, you can lose the remote branch commits if your local branch is not up to date, so be careful.",
-        "help": "undo commit message after pushing amend"
+    "title": "Undo a commit message after pushing",
+    "content": "This is a two-step process. You need to amend your commit message by using `git commit --amend`, and then you re-write your branch commit history by force pushing the commit: `git push <remote> <branch> --force` \n\n **Warning:** by force pushing, you can lose the remote branch commits if your local branch is not up to date, so be careful.",
+    "help": "undo commit message after pushing amend"
 },
 {
-        "title": "Combine two or more commits",
-        "content": "You will need to use an interactive rebase. If you're rebasing against master, start the process by typing `git rebase -i master`. However, if you're not rebasing against a branch, you'll need to rebase against your `HEAD`.\n\n If you want to squash your last 2 commits, you can use: \n\n `git rebase -i HEAD~2`.\n\n You will then be prompted to follow instructions to pick commits. If you wish to combine all your commits with the oldest *first* commit, leave the first line with `pick` and change the letter to `f` on all other commits. Learn more about [rebases](https://github.com/k88hudson/git-flight-rules#i-need-to-combine-commits) ",
-        "help": "combine commits join rebase",
-        "cmds": "git rebase"
+    "title": "Combine two or more commits",
+    "content": "You will need to use an interactive rebase. If you're rebasing against master, start the process by typing `git rebase -i master`. However, if you're not rebasing against a branch, you'll need to rebase against your `HEAD`.\n\n If you want to squash your last 2 commits, you can use: \n\n `git rebase -i HEAD~2`.\n\n You will then be prompted to follow instructions to pick commits. If you wish to combine all your commits with the oldest *first* commit, leave the first line with `pick` and change the letter to `f` on all other commits. Learn more about [rebases](https://github.com/k88hudson/git-flight-rules#i-need-to-combine-commits) ",
+    "help": "combine commits join rebase",
+    "cmds": "git rebase"
 },
 {
-        "title": "Remove a file from git but keep the local file",
-        "content": "This will remove the file your your git tracking, but keep your local copy:\n\n `git rm --cached myfile.txt`",
-        "help": "remove file from git delete"
+    "title": "Remove a file from git but keep the local file",
+    "content": "This will remove the file your your git tracking, but keep your local copy:\n\n `git rm --cached myfile.txt`",
+    "help": "remove file from git delete"
 },
 {
-        "title": "Compare an old revision of a file",
-        "content": "You can easily view the contents of a file at a specific point in time by using: \n\n `git show commitHash:myFile.txt`",
-        "help": "compare old revision file",
-        "cmds": "git show"
+    "title": "Compare an old revision of a file",
+    "content": "You can easily view the contents of a file at a specific point in time by using: \n\n `git show commitHash:myFile.txt`",
+    "help": "compare old revision file",
+    "cmds": "git show"
 },
 {
-        "title": "Squash feature branch commits to merge into the release branch",
-        "content": "If you decide to merge and squash your commits, this will create a new commit but only in the release branch, therefore the history of the feature branch will remain intact. \n\n Here's an example on how to achieve this: \n\n `git fetch origin` \n\n `git checkout [release-branch]` \n\n `git rebase origin/[release-branch]` \n\n `git merge —squash —no-commit [feature-branch]` \n\n `git commit -m 'Merge X into Y'` \n\n You'll end up with one commit only in your release branch, while keeping the feature history intact. \n\n [Learn more about feature branches](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow)",
-        "help": "squash combine commits feature merge update release",
-        "cmds": "git squash"
+    "title": "Squash feature branch commits to merge into the release branch",
+    "content": "If you decide to merge and squash your commits, this will create a new commit but only in the release branch, therefore the history of the feature branch will remain intact. \n\n Here's an example on how to achieve this: \n\n `git fetch origin` \n\n `git checkout [release-branch]` \n\n `git rebase origin/[release-branch]` \n\n `git merge —squash —no-commit [feature-branch]` \n\n `git commit -m 'Merge X into Y'` \n\n You'll end up with one commit only in your release branch, while keeping the feature history intact. \n\n [Learn more about feature branches](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow)",
+    "help": "squash combine commits feature merge update release",
+    "cmds": "git squash"
 },
 {
-        "title": "Reset to a certain commit in history",
-        "content": "If you don't care about your local changes, you can reset back to one commit back in time by doing a hard reset: \n\n `git reset --hard HEAD~1` \n\n This will set the HEAD back by one commit. You can also do this using the commit hash instead.",
-        "help": "revert reset commit certain history"
+    "title": "Reset to a certain commit in history",
+    "content": "If you don't care about your local changes, you can reset back to one commit back in time by doing a hard reset: \n\n `git reset --hard HEAD~1` \n\n This will set the HEAD back by one commit. You can also do this using the commit hash instead.",
+    "help": "revert reset commit certain history"
 },
 {
-        "title": "Untrack files that already exist",
-        "content": "If you want to untrack a file that already exists in the repo but would still like to keep it locally, commit your changes and run: \n\n `git rm -r --cached` \n\n This will remove changed files from the staging area. Afterwards, just run a normal: \n\n `git add .` and commit your changes.",
-        "help": "untrack remove files already exist there"
+    "title": "Untrack files that already exist",
+    "content": "If you want to untrack a file that already exists in the repo but would still like to keep it locally, commit your changes and run: \n\n `git rm -r --cached` \n\n This will remove changed files from the staging area. Afterwards, just run a normal: \n\n `git add .` and commit your changes.",
+    "help": "untrack remove files already exist there"
 },
 {
-        "title": "Recover a deleted tag",
-        "content": "If you want to recover a tag deleted by accident, start by grabbing it: \n\n `git fsck --unreachable | grep tag` \n\n Once you found it, you can restore it: \n\n `git update-ref refs/tags/NAME KEY` \n\n [Source](http://java.dzone.com/articles/git-tip-restore-deleted-tag)",
-        "help": "recover undo deleted tag accident"
+    "title": "Recover a deleted tag",
+    "content": "If you want to recover a tag deleted by accident, start by grabbing it: \n\n `git fsck --unreachable | grep tag` \n\n Once you found it, you can restore it: \n\n `git update-ref refs/tags/NAME KEY` \n\n [Source](http://java.dzone.com/articles/git-tip-restore-deleted-tag)",
+    "help": "recover undo deleted tag accident"
 },
 {
-        "title": "Move uncommited changes to a new branch",
-        "content": "Too often we start changing files on a branch to fix something, only then realising we didn't create a new branch before. Luckily, this is as simple as creating a new branch: \n\n `git checkout -b my-new-branch-name` \n\n This will bring any files from your current branch into the new one, which you can commit then.",
-        "help": "create new branch keep changes"
+    "title": "Move uncommited changes to a new branch",
+    "content": "Too often we start changing files on a branch to fix something, only then realising we didn't create a new branch before. Luckily, this is as simple as creating a new branch: \n\n `git checkout -b my-new-branch-name` \n\n This will bring any files from your current branch into the new one, which you can commit then.",
+    "help": "create new branch keep changes"
 },
 {
-        "title": "Push locally created branch to remote",
-        "content": "If you've created a local branch but now want it to be tracked on the remote you can run: \n\n `git push -u origin my-new-branch-name` \n\n Now everyone can checkout to your branch.",
-        "help": "push local branch remote"
+    "title": "Push locally created branch to remote",
+    "content": "If you've created a local branch but now want it to be tracked on the remote you can run: \n\n `git push -u origin my-new-branch-name` \n\n Now everyone can checkout to your branch.",
+    "help": "push local branch remote"
 },
 {
-        "title": "Recover stashed changes",
-        "content": "If you still have your changes stashed, you can apply them onto your branch by using `git stash apply`. You can run `git diff` to compare the differences. To get rid of the stash afterwards run: \n\n `git stash drop` \n\n If you have more than one stash, find the one you need by running: \n\n `git stash list` and applying it by referencing its index: \n\n `git stash@{1}` \n\n Keep in mind that this is zero-based (`stash@{0}` is the first one) \n\n [Read more about stashes](http://stackoverflow.com/q/19003009)",
-        "help": "recover stash stash@ changes stashed",
-        "cmds": "git checkout stash"
+    "title": "Recover stashed changes",
+    "content": "If you still have your changes stashed, you can apply them onto your branch by using `git stash apply`. You can run `git diff` to compare the differences. To get rid of the stash afterwards run: \n\n `git stash drop` \n\n If you have more than one stash, find the one you need by running: \n\n `git stash list` and applying it by referencing its index: \n\n `git stash@{1}` \n\n Keep in mind that this is zero-based (`stash@{0}` is the first one) \n\n [Read more about stashes](http://stackoverflow.com/q/19003009)",
+    "help": "recover stash stash@ changes stashed",
+    "cmds": "git checkout stash"
 },
 {
-        "title": "Rename my local and remote branch",
-        "content": "Let’s say you have a _“fix-bug25”_ branch, and you want to rename it to _“hotfix-users”_. First, change the local branch: \n\n `git branch -m fix-bug25 hotfix-users` \n\n Now, the remote branch: you can’t rename the branch directly, so you’ll need to delete it and push it again with the new name. Make sure no one else within your team is working on it! Delete the branch: `git push origin --delete fix-bug25` \n\n And now let's push the new one: `git push origin hotfix-users`",
-        "help": "rename wrong name branch"
+    "title": "Rename my local and remote branch",
+    "content": "Let’s say you have a _“fix-bug25”_ branch, and you want to rename it to _“hotfix-users”_. First, change the local branch: \n\n `git branch -m fix-bug25 hotfix-users` \n\n Now, the remote branch: you can’t rename the branch directly, so you’ll need to delete it and push it again with the new name. Make sure no one else within your team is working on it! Delete the branch: `git push origin --delete fix-bug25` \n\n And now let's push the new one: `git push origin hotfix-users`",
+    "help": "rename wrong name branch"
 },
 {
-        "title": "Undo a commit after pushing it to master",
-        "content": "This will revert one or more commits that you want to erase from the remote branch. You can either specify one by hash: \n\n `git revert b712c3c` \n\n Revert only the second to last commit: \n\n `git revert HEAD^` \n\n Or simply undo the last commit without creating a revert commit: \n\n `git revert -n HEAD` \n\n Tip: `HEAD~1` is a shortcut to `HEAD^`, they mean the same thing. [Learn more about git revert](https://www.atlassian.com/git/tutorials/undoing-changes/git-revert)",
-        "help": "undo revert commit pushed after push",
-        "cmds": "git revert"
+    "title": "Undo a commit after pushing it to master",
+    "content": "This will revert one or more commits that you want to erase from the remote branch. You can either specify one by hash: \n\n `git revert b712c3c` \n\n Revert only the second to last commit: \n\n `git revert HEAD^` \n\n Or simply undo the last commit without creating a revert commit: \n\n `git revert -n HEAD` \n\n Tip: `HEAD~1` is a shortcut to `HEAD^`, they mean the same thing. [Learn more about git revert](https://www.atlassian.com/git/tutorials/undoing-changes/git-revert)",
+    "help": "undo revert commit pushed after push",
+    "cmds": "git revert"
 },
 {
-        "title": "Unstage a file",
-        "content": "To unstage a file added by mistake, the easiest option would be: \n\n `git reset HEAD unlovedFile.txt`",
-        "help": "unstage file from remove commit"
+    "title": "Unstage a file",
+    "content": "To unstage a file added by mistake, the easiest option would be: \n\n `git reset HEAD unlovedFile.txt`",
+    "help": "unstage file from remove commit"
 },
 {
-        "title": "Committed to the wrong branch",
-        "content": "Start by switching to the new branch you forgot to create, by typing \n\n `git checkout -b <new-branch>`. \n\n Switch back to the original branch now: \n\n `git checkout <original-branch>` \n\n ...and reset to the last commit you want to keep. \n\n To do so, you can type `git log` and save the hash (SHA1) of the last commit that you want to keep. Let's say this is `a31a45c`. \n\n Now you have to reset it: `git reset --hard a31a45c` and push this last forced reset. \n\n **Warning:** Make sure no one has committed to that original branch in the meantime, or changes might be lost!",
-        "help": "commit wrong branch master accident"
+    "title": "Committed to the wrong branch",
+    "content": "Start by switching to the new branch you forgot to create, by typing \n\n `git checkout -b <new-branch>`. \n\n Switch back to the original branch now: \n\n `git checkout <original-branch>` \n\n ...and reset to the last commit you want to keep. \n\n To do so, you can type `git log` and save the hash (SHA1) of the last commit that you want to keep. Let's say this is `a31a45c`. \n\n Now you have to reset it: `git reset --hard a31a45c` and push this last forced reset. \n\n **Warning:** Make sure no one has committed to that original branch in the meantime, or changes might be lost!",
+    "help": "commit wrong branch master accident"
 },
 {
-        "title": "Delete remote branch",
-        "content": "If you are positive this branch can be deleted, type: \n\n `git push origin --delete branch-name`",
-        "help": "delete remote branch"
+    "title": "Delete remote branch",
+    "content": "If you are positive this branch can be deleted, type: \n\n `git push origin --delete branch-name`",
+    "help": "delete remote branch"
 },
 {
-        "title": "Reset local branch to match remote",
-        "content": "Assuming that you have no changes that you want to save, this can be done with two easy commands. \n\n First let's get a fresh fetch of the remote: \n\n `git fetch <remoteBranchName>`. \n\n Then let's tell git that we want to reset our local to the head of our remote branch like so: \n\n `git reset --hard origin/<localBranchName>`. \n\n If you do have a commit that you wish to keep, you should check out a new branch and make a commit before resetting: `git commit -m \"just in case\"` \n\n `git branch my-new-branch-name`",
-        "help": "reset local branch to match remote"
+    "title": "Reset local branch to match remote",
+    "content": "Assuming that you have no changes that you want to save, this can be done with two easy commands. \n\n First let's get a fresh fetch of the remote: \n\n `git fetch <remoteBranchName>`. \n\n Then let's tell git that we want to reset our local to the head of our remote branch like so: \n\n `git reset --hard origin/<localBranchName>`. \n\n If you do have a commit that you wish to keep, you should check out a new branch and make a commit before resetting: `git commit -m \"just in case\"` \n\n `git branch my-new-branch-name`",
+    "help": "reset local branch to match remote"
 },
 {
-        "title": "Show number of commits from each contributor",
-        "content": "Want to see how many commits everyone in your team has made? \n\n `git shortlog -s -n` \n\n This will order the authors in decending order by number of commits made.",
-        "help": "show number commits"
+    "title": "Show number of commits from each contributor",
+    "content": "Want to see how many commits everyone in your team has made? \n\n `git shortlog -s -n` \n\n This will order the authors in decending order by number of commits made.",
+    "help": "show number commits"
 },
 {
-        "title": "Show all the commits to one file",
-        "content": "Ever wanted to see all the commits made to a single file? \n\n `git log --follow -p -- myfile` \n\n This will show all the commits made to a single file. The `--follow` argument ensures that we can see commits made to that file even if it was under a different file name at the time. \n\n Omit the `-p` to just see the commit messages and not the commit content.",
-        "help": "show all commits file",
-        "cmds": "git log follow"
+    "title": "Show all the commits to one file",
+    "content": "Ever wanted to see all the commits made to a single file? \n\n `git log --follow -p -- myfile` \n\n This will show all the commits made to a single file. The `--follow` argument ensures that we can see commits made to that file even if it was under a different file name at the time. \n\n Omit the `-p` to just see the commit messages and not the commit content.",
+    "help": "show all commits file",
+    "cmds": "git log follow"
 },
 {
-        "title": "Use command alias's in your CLI",
-        "content": "Getting fed up of typing `git status`? Well we can easily alias that command to something slightly quicker to type within git. \n\n `git config --global alias.st status` \n\n Now all we have to type is `git st` \n\n We can take it a step further by aliasing more complicated commands to an alias: \n\n `git config --global alias.logme 'log -p --author=Rob'` \n\n Now we've aliased `git logme` to show all of our commits.",
-        "help": "command alias"
+    "title": "Use command alias's in your CLI",
+    "content": "Getting fed up of typing `git status`? Well we can easily alias that command to something slightly quicker to type within git. \n\n `git config --global alias.st status` \n\n Now all we have to type is `git st` \n\n We can take it a step further by aliasing more complicated commands to an alias: \n\n `git config --global alias.logme 'log -p --author=Rob'` \n\n Now we've aliased `git logme` to show all of our commits.",
+    "help": "command alias"
 },
 {
     "title": "Mark a conflict file as resolved",

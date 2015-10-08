@@ -1,3 +1,4 @@
+/*jshint esnext:true */
 import React from 'react';
 import FilterableList from './FilterableList';
 import Sidebar from './Sidebar';

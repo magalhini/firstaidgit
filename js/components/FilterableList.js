@@ -1,7 +1,9 @@
+/*jshint esnext:true */
 import React from 'react/addons';
 import Fuse from './../../assets/vendor/fuse.js';
-import markdown from 'markdown';
 import SVGIcon from './../utils/SVG';
+import FilterableListItem from './FilterableListItem';
+import markdown from 'markdown';
 
 var md = markdown.markdown;
 
@@ -20,43 +22,10 @@ function keysrt(key, desc) {
 let ReactTransitionGroup = React.addons.CSSTransitionGroup;
 
 /**
- * A list item <li>
- * @type {Object}
- */
-let FilterableListItem = React.createClass({
-    getInitialState() {
-        return { active: false };
-    },
-
-    toggle() {
-        this.setState({active: !this.state.active});
-    },
-
-    render() {
-        return (
-            <ReactTransitionGroup transitionName="example" transitionAppear={true}>
-                <li key={this.props.name} className="item">
-                    <h3 onClick={this.toggle} className={this.state.active ? 'item__title is-open' : 'item__title'}>
-                        {this.props.name}
-                        <SVGIcon class="icon-arrow" icon="arrowDown"/>
-                    </h3>
-                    <div className="item__instructions">
-                        <div dangerouslySetInnerHTML={{__html: this.props.instructions}}></div>
-                        <button className="button item__button" onClick={this.props.resetQuery}>Search again</button>
-                        <button className="button item__button" onClick={this.toggle}>Close</button>
-                    </div>
-                </li>
-            </ReactTransitionGroup>
-        );
-    }
-})
-
-/**
  * The Search and Results wrapper component
  * @type {Object}
  */
 let FilterableList = React.createClass({
-
     componentWillMount() {
         this.classes = {
             input: 'c-query',
@@ -102,19 +71,15 @@ let FilterableList = React.createClass({
     },
 
     updateList(items, input) {
-        var self = this;
-
         // Sort alphabetically. Not working 100% though.
         items = items.sort(keysrt('title', false));
 
-        return items.map(function(i) {
-            // Markdown is awesome
-            var parsed = md.toHTML(i.content);
+        return items.map((i) => {
             return (
                 <FilterableListItem name={i.title}
-                    instructions={parsed}
-                    resetQuery={self.clearInput}
-                    classes={self.classes}/>
+                    instructions = {md.toHTML(i.content) }
+                    resetQuery   = {self.clearInput}
+                    classes      = {this.classes}/>
             );
         });
     },
@@ -128,14 +93,12 @@ let FilterableList = React.createClass({
     },
 
     renderCount(count, length) {
-        var word = 'Results';
+        let word = 'Results';
 
         if (!count) return null;
         if (count === length) word = 'All topics';
 
-        return (<p className="c-filterableList__number">
-                  <b>{word}</b> ({count})
-                </p>);
+        return (<p className="c-filterableList__number"><b>{word}</b> ({count})</p>);
     },
 
     render() {
