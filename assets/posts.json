@@ -253,4 +253,10 @@
     "content": "To show information about a remote branch, such as fetch and push URLs, tracked branches and HEAD, use: \n\n `git remote show origin` \n\n Where `origin` is your remote.",
     "help": "remote branch show information",
     "cmds": "git remote show"
+},
+{
+    "title": "Compare difference between 2 branches",
+    "content": "You can get difference of 2 branches by: \n\n `git diff [branch one]..[branch two]` \n\n Example to get differences between **staging** and **development**: \n\n `git diff staging..development` \n\n To get difference of a specific file between 2 branches: \n\n `git diff [branch one]..[branch two] [file path]` \n\n",
+    "help": "compare difference between 2 branches",
+    "cmds": "git diff"
 }]
