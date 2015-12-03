@@ -253,4 +253,10 @@
     "content": "To show information about a remote branch, such as fetch and push URLs, tracked branches and HEAD, use: \n\n `git remote show origin` \n\n Where `origin` is your remote.",
     "help": "remote branch show information",
     "cmds": "git remote show"
+},
+{
+    "title": "Delete specified tag",
+    "content": "You can delete a specific tag locally using: \n\n `git tag -d [tag name]` \n\n Remove tag from remote using: \n\n `git push [remote name] :refs/tags/[tag name]` \n\n",
+    "help": "delete tag for local and remote",
+    "cmds": "git tag"
 }]
