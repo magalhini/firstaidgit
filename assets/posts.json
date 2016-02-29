@@ -253,4 +253,11 @@
     "content": "To show information about a remote branch, such as fetch and push URLs, tracked branches and HEAD, use: \n\n `git remote show origin` \n\n Where `origin` is your remote.",
     "help": "remote branch show information",
     "cmds": "git remote show"
+},
+{
+    "title": "Remove a submodule",
+    "content": "To remove a submodule simply use: \n\n ``git rm <submodule_path>``\n\n In case you later want to add a submodule with the same name, you will also need to use:\n\n``rm -rf .git/modules/<submodule_path>``",
+    "help": "remove submodule rm delete",
+    "cmds": "git rm"
+
 }]
