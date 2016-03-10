@@ -253,4 +253,10 @@
     "content": "To show information about a remote branch, such as fetch and push URLs, tracked branches and HEAD, use: \n\n `git remote show origin` \n\n Where `origin` is your remote.",
     "help": "remote branch show information",
     "cmds": "git remote show"
+},
+{
+    "title": "Rename a remote",
+    "content": "To rename a remote: \n\n `git remote rename <oldRemote> <newRemote>` \n\n You can verify your changes by listing the remotes: \n\n `git remote` \n\n [Source](https://help.github.com/articles/renaming-a-remote/)",
+    "help": "rename a remote",
+    "cmds": "git remote rename <oldRemote> <newRemote>"
 }]
