@@ -253,4 +253,10 @@
     "content": "To show information about a remote branch, such as fetch and push URLs, tracked branches and HEAD, use: \n\n `git remote show origin` \n\n Where `origin` is your remote.",
     "help": "remote branch show information",
     "cmds": "git remote show"
+},
+{
+    "title": "List untracked files within untracked directories",
+    "content": "To list untracked files within untracked directories: \n\n `git status -u` \n\n. By default, git will not show files within directories that are untracked.",
+    "help": "list untracked files within untracked directories",
+    "cmds": "git status"
 }]
