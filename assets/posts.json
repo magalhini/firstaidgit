@@ -264,4 +264,10 @@
     "content": "To rename a remote: \n\n `git remote rename <oldRemote> <newRemote>` \n\n You can verify your changes by listing the remotes: \n\n `git remote` \n\n [Source](https://help.github.com/articles/renaming-a-remote/)",
     "help": "rename a remote",
     "cmds": "git remote rename <oldRemote> <newRemote>"
+  },
+  {
+    "title": "Remove a submodule",
+    "content": "To remove a submodule use: \n\n ``git rm <submodule_path>``\n\n In case you later want to add a submodule with the same name, you will also need to use:\n\n``rm -rf .git/modules/<submodule_path>``",
+    "help": "remove submodule rm delete",
+    "cmds": "git rm"
 }]
