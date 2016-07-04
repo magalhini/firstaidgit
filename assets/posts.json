@@ -259,4 +259,9 @@
     "content": "You can delete a specific tag locally using: \n\n `git tag -d [tag name]` \n\n Remove tag from remote using: \n\n `git push [remote name] :refs/tags/[tag name]` \n\n",
     "help": "delete tag for local and remote",
     "cmds": "git tag"
+  },{
+    "title": "Rename a remote",
+    "content": "To rename a remote: \n\n `git remote rename <oldRemote> <newRemote>` \n\n You can verify your changes by listing the remotes: \n\n `git remote` \n\n [Source](https://help.github.com/articles/renaming-a-remote/)",
+    "help": "rename a remote",
+    "cmds": "git remote rename <oldRemote> <newRemote>"
 }]
