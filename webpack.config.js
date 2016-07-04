@@ -20,8 +20,6 @@ var config = {
     resolve: {
         extensions: ['', '.js', '.jsx', '.scss'],
         alias: {
-            //'es6-promise': path.join(folders.NPM, 'es6-promise', 'es6-promise.js'),
-            //'fetch': path.join(folders.NPM, 'whatwg-fetch', 'fetch.js'),
         }
     },
     stats: {

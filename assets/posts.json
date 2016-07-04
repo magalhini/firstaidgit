@@ -127,7 +127,7 @@
 },
 {
     "title": "Undo a commit after pushing it to master",
-    "content": "This will revert one or more commits that you want to erase from the remote branch. You can either specify one by hash: \n\n `git revert b712c3c` \n\n Revert only the second to last commit: \n\n `git revert HEAD^` \n\n Or simply undo the last commit without creating a revert commit: \n\n `git revert -n HEAD` \n\n Tip: `HEAD~1` is a shortcut to `HEAD^`, they mean the same thing. [Learn more about git revert](https://www.atlassian.com/git/tutorials/undoing-changes/git-revert)",
+    "content": "This will revert one or more commits that you want to erase from the remote branch. You can either specify one by hash: \n\n `git revert b712c3c` \n\n Revert only the second to last commit: \n\n `git revert HEAD^` \n\n Or undo the last commit without creating a revert commit: \n\n `git revert -n HEAD` \n\n Tip: `HEAD~1` is a shortcut to `HEAD^`, they mean the same thing. [Learn more about git revert](https://www.atlassian.com/git/tutorials/undoing-changes/git-revert)",
     "help": "undo revert commit pushed after push",
     "cmds": "git revert"
 },
@@ -214,7 +214,7 @@
 },
 {
     "title": "List all files changed in a commit",
-    "content": "To view just the file names, use: \n\n `git show --name-only SHA1`\n\nAlso view the status:\n\n `git show --name-status SHA1`",
+    "content": "To view **just** the file names, use: \n\n `git show --name-only SHA1`\n\nAlso view the status:\n\n `git show --name-status SHA1`",
     "help": "show branches remote display",
     "cmds": "git show"
 },
@@ -276,6 +276,12 @@
     "help": "commit log difference between 2 branches",
     "cmds": "git log"
 },{
+    "title": "List untracked files within untracked directories",
+    "content": "To list untracked files within untracked directories: \n\n `git status -u` \n\n. By default, git will not show files within directories that are untracked.",
+    "help": "list untracked files within untracked directories",
+    "cmds": "git status"
+},
+{
     "title": "List untracked files within untracked directories",
     "content": "To list untracked files within untracked directories: \n\n `git status -u` \n\n. By default, git will not show files within directories that are untracked.",
     "help": "list untracked files within untracked directories",
