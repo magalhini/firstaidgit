@@ -12,6 +12,7 @@ var config = {
     entry: {
         app: [
             'webpack/hot/dev-server',
+            'webpack-dev-server/client?http://localhost:3000',
             "./js/app.js"
         ]
     },
