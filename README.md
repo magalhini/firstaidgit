@@ -1,3 +1,16 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [First Aid git](#first-aid-git)
+  - [How to run](#how-to-run)
+  - [Make a build](#make-a-build)
+  - [Using the CLI](#using-the-cli)
+  - [Notes](#notes)
+  - [Contributing with git answers](#contributing-with-git-answers)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 #First Aid git
 
 ## How to run
