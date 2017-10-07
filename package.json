@@ -16,10 +16,8 @@
     "react-inlinesvg": "^0.4.2",
     "sass-loader": "^3.0.0",
     "showdown": "^1.2.3",
-    "whatwg-fetch": "^0.7.0",
-    "react-router": "^0.13.3",
-    "showdown": "^1.2.3",
-    "whatwg-fetch": "^0.9.0"
+    "whatwg-fetch": "^0.9.0",
+    "react-router": "^0.13.3"
   },
   "devDependencies": {
     "autoprefixer-loader": "^3.1.0",
@@ -27,28 +25,30 @@
     "babel-loader": "^5.3.2",
     "css-loader": "^0.19.0",
     "exports-loader": "^0.6.2",
-    "file-loader": "^0.8.1",
-    "gulp": "^3.8.11",
-    "gulp-sass": "^2.0.4",
-    "gulp-uglify": "^1.2.0",
-    "gulp-webpack": "^1.4.0",
-    "html-webpack-plugin": "^1.3.0",
-    "imports-loader": "^0.6.3",
-    "json-loader": "^0.5.1",
-    "style-loader": "^0.12.1",
-    "webpack": "^1.8.11",
-    "webpack-dev-server": "^1.8.2",
-    "extract-text-webpack-plugin": "^0.8.2",
     "file-loader": "^0.8.4",
     "gulp": "^3.9.0",
+    "gulp-sass": "^2.0.4",
     "gulp-uglify": "^1.4.1",
     "gulp-webpack": "^1.5.0",
     "html-webpack-plugin": "^1.6.1",
     "imports-loader": "^0.6.4",
-    "style-loader": "^0.12.4",
     "json-loader": "^0.5.3",
-    "react-hot-loader": "^1.3.0",
+    "style-loader": "^0.12.4",
     "webpack": "^1.12.2",
-    "webpack-dev-server": "^1.12.0"
-  }
+    "webpack-dev-server": "^1.12.0",
+    "extract-text-webpack-plugin": "^0.8.2",
+    "react-hot-loader": "^1.3.0"
+  },
+  "keywords": [
+    null
+  ],
+  "homepage": "https://github.com/magalhini/firstaidgit",
+  "bugs": "https://github.com/magalhini/firstaidgit/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/magalhini/firstaidgit.git"
+  },
+  "contributors": [
+    "Ricardo Magalhães"
+  ]
 }
