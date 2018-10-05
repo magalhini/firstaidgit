@@ -280,10 +280,4 @@
     "content": "To list untracked files within untracked directories: \n\n `git status -u` \n\n. By default, git will not show files within directories that are untracked.",
     "help": "list untracked files within untracked directories",
     "cmds": "git status"
-},
-{
-    "title": "List untracked files within untracked directories",
-    "content": "To list untracked files within untracked directories: \n\n `git status -u` \n\n. By default, git will not show files within directories that are untracked.",
-    "help": "list untracked files within untracked directories",
-    "cmds": "git status"
 }]
