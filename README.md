@@ -1,4 +1,14 @@
-#First Aid git
+# First Aid git
+
+> First Aid Git
+
+**Table of Contents**
+
+  - [How to run](#how-to-run)
+  - [Make a build](#make-a-build)
+  - [Using the CLI](#using-the-cli)
+  - [Notes](#notes)
+  - [Contributing with git answers](#contributing-with-git-answers)
 
 ## How to run
 
