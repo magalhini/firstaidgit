@@ -40,7 +40,7 @@
     "react-hot-loader": "^1.3.0"
   },
   "keywords": [
-    null
+    "git", "github", "questions", "faq"
   ],
   "homepage": "https://github.com/magalhini/firstaidgit",
   "bugs": "https://github.com/magalhini/firstaidgit/issues",
@@ -49,6 +49,7 @@
     "url": "https://github.com/magalhini/firstaidgit.git"
   },
   "contributors": [
-    "Ricardo Magalhães"
+    "Ricardo Magalhães",
+    "Richard Littauer"
   ]
 }
