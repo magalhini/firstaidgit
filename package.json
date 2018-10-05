@@ -1,14 +1,14 @@
 {
   "name": "FirstAidGit",
   "version": "1.0.0",
-  "description": "Searchable collection of git frequently asked questions",
+  "description": "Searchable collection of frequently asked questions for git",
   "main": "webpack.config.js",
   "scripts": {
     "start": "webpack-dev-server --hot --progress --colors",
     "build": "webpack --progress --config webpack.dist.config --colors"
   },
   "author": "Ricardo Magalhães",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "es6-promise": "^3.0.2",
     "markdown": "^0.5.0",
