@@ -22,7 +22,7 @@ let Footer = React.createClass({
                     </div>
                     <div className="column-3">
                         <h3>Credits</h3>
-                        Searching algorithm by <a href="http://kiro.me/projects/fuse.html">Fuse.js</a> and
+                        Searching algorithm by <a href="https://fusejs.io/">Fuse.js</a> and
                         markdown converter by <a href="https://github.com/showdownjs/showdown">Showdown.js</a>
                     </div>
                 </div>
