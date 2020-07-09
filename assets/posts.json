@@ -220,7 +220,7 @@
 },
 {
     "title": "Checkout a file from a different branch",
-    "content": "You can checkout a single file from a different branch without switching to it. Use: \n\n `git checkout <branch_name> --<file_path>`",
+    "content": "You can checkout a single file from a different branch without switching to it. Use: \n\n `git checkout <branch_name> -- <file_path>`",
     "help": "checkout file different branch",
     "cmds": "git checkout"
 },
